@@ -42,8 +42,8 @@ import Base from '../layouts/Base.astro';
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos en qué te podemos ayudar"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar consulta</button>
-          <p class="exito" id="exito" hidden>✅ ¡Gracias! Recibimos tu mensaje y te respondemos a la brevedad.</p>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar por WhatsApp 💬</button>
+          <p class="exito" id="exito" hidden>✅ ¡Listo! Se abrió WhatsApp con tu mensaje. Solo apretá enviar y te respondemos a la brevedad.</p>
         </form>
       </div>
 
@@ -103,8 +103,16 @@ import Base from '../layouts/Base.astro';
     if (!emailOk) { setError('email', 'Ingresá un email válido.'); ok = false; } else setError('email', '');
 
     if (ok) {
-      // 📌 Sin backend todavía: por ahora muestra confirmación.
-      // Después lo conectamos a tu email o WhatsApp (te explico cómo).
+      // Arma el mensaje y abre WhatsApp hacia el número de Delta Academia.
+      const materia = form.materia.value || 'No especificada';
+      const mensaje = form.mensaje.value.trim() || '(sin mensaje)';
+      const texto =
+        `¡Hola Delta Academia! Soy ${nombre}.\n` +
+        `Materia de interés: ${materia}\n` +
+        `Mensaje: ${mensaje}\n` +
+        `Mi email: ${email}`;
+      const url = `https://wa.me/59898521288?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
       exito.hidden = false;
       form.reset();
     }
