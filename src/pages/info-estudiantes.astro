@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const recursos = [
+  {
+    grupo: 'Facultad y trámites',
+    items: [
+      { t: 'Sitio oficial de la FCEA', u: 'https://fcea.udelar.edu.uy' },
+      { t: 'Bedelías (UdelaR)', u: 'https://bedelias.udelar.edu.uy' },
+    ],
+  },
+  {
+    grupo: 'Planes de estudio',
+    items: [
+      { t: 'Grilla — Contador Público 2024', u: 'https://fcea.udelar.edu.uy/ensenanza/las-carreras-de-fcea/7538-contador-publico-2024.html' },
+      { t: 'Grilla — Licenciatura en Economía', u: 'https://fcea.udelar.edu.uy/ensenanza-dpto-economia/licenciatura-en-economia.html' },
+      { t: 'Grilla — Licenciatura en Administración', u: 'https://fcea.udelar.edu.uy/depto-adm-ensenanza/lic-adm-ciencias-adm.html' },
+    ],
+  },
+  {
+    grupo: 'Gremios estudiantiles',
+    items: [
+      { t: 'CGU — @cgueconomia', u: 'https://www.instagram.com/cgueconomia/' },
+      { t: 'CECEA — @ceceafeuu', u: 'https://www.instagram.com/ceceafeuu/' },
+    ],
+  },
+];
+---
+
+<Base title="Info para estudiantes — Delta Academia" description="Links útiles: FCEA, EVA, gremios estudiantiles y recursos para cursar.">
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Info para estudiantes</span>
+      <h1>Recursos útiles</h1>
+      <p class="medida">
+        Links directos a la facultad, el EVA y los gremios estudiantiles, para tener todo a mano.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      {recursos.map((r) => (
+        <div class="grupo-recursos reveal">
+          <h2>{r.grupo}</h2>
+          <div class="grid">
+            {r.items.map((i) => (
+              <a href={i.u} target="_blank" rel="noopener" class="card recurso">
+                <span>{i.t}</span>
+                <span class="flecha">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .grupo-recursos { margin-bottom: var(--sp-6); }
+  .recurso { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); font-weight: 500; text-decoration: none; }
+  .recurso .flecha { color: var(--ambar); font-size: 1.2rem; }
+</style>

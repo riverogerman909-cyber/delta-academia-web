@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+
+const pasos = [
+  { n: '01', t: 'Material grabado', d: 'Accedés al teórico y al práctico grabados para estudiar a tu ritmo, las veces que quieras.' },
+  { n: '02', t: 'Zoom semanal', d: 'Cada semana nos encontramos en vivo por Zoom para repasar, practicar y resolver dudas.' },
+  { n: '03', t: 'Práctica tipo examen', d: 'Trabajamos con ejercicios de parciales y exámenes, paso a paso.' },
+  { n: '04', t: 'Repaso final', d: 'Antes de cada prueba, repaso intensivo y espacio abierto para consultas.' },
+];
+---
+
+<Base title="Cómo trabajamos — Delta Academia" description="Nuestro método: teoría clara, práctica tipo parcial y acompañamiento constante.">
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Cómo trabajamos</span>
+      <h1>Un método pensado para el parcial</h1>
+      <p class="medida">
+        No repetimos el teórico de facultad: lo traducimos. Nuestro foco está en que
+        <span class="ambar">entiendas y apruebes</span>, con material propio y práctica constante.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="grid">
+        {pasos.map((p) => (
+          <div class="card paso reveal">
+            <span class="paso-num">{p.n}</span>
+            <h3>{p.t}</h3>
+            <p style="color: var(--texto-suave);">{p.d}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="card destacado reveal mt-3">
+        <h2>Nuestra modalidad</h2>
+        <p style="color: var(--texto-suave);">
+          Combinamos lo mejor de dos mundos: <strong>material teórico y práctico grabado</strong>
+          que ves cuando quieras, y <strong>clases semanales en vivo por Zoom</strong> donde te
+          acompañamos de cerca. Así avanzás a tu ritmo sin perder el seguimiento.
+        </p>
+        <a href="/contacto" class="btn btn-primary mt-3">Consultar días y horarios</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .paso { position: relative; }
+  .paso-num { font-family: var(--fuente-titulo); font-size: 2.2rem; font-weight: 800; color: var(--ambar); }
+  .destacado { background: var(--azul-claro); border-color: transparent; }
+</style>

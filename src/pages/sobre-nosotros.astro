@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Sobre nosotros — Delta Academia" description="Quiénes somos y por qué creamos Delta Academia.">
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Sobre nosotros</span>
+      <h1>Somos Delta Academia</h1>
+      <p class="medida">
+        Acompañamiento paralelo a la facultad para estudiantes de la Facultad de Ciencias
+        Económicas y de Administración de la UdelaR.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor cols">
+      <div class="reveal">
+        <h2>Nuestra historia</h2>
+        <p style="color: var(--texto-suave);">
+          Soy <strong>Germán Rivero</strong>, responsable de Delta Academia. Me recibí de
+          Economista y Contador Público, y me apasiona la contabilidad y las finanzas tanto
+          como transmitir lo que sé.
+        </p>
+        <p style="color: var(--texto-suave);">
+          Delta nació de una necesidad concreta: un acompañamiento paralelo a la facultad,
+          de calidad, pensado para que cada estudiante entienda de verdad y llegue con
+          confianza a los parciales y exámenes.
+        </p>
+        <p style="color: var(--texto-suave);">
+          Creemos que la contabilidad y el derecho se pueden explicar de forma
+          <span class="ambar">simple y cercana</span>, sin perder el rigor académico.
+        </p>
+      </div>
+
+      <aside class="reveal">
+        <div class="card valores">
+          <h3>Lo que nos importa</h3>
+          <ul>
+            <li>✅ Claridad antes que cantidad</li>
+            <li>✅ Práctica real, tipo parcial</li>
+            <li>✅ Cercanía con el estudiante</li>
+            <li>✅ Material propio y actualizado</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--sp-6); align-items: start; }
+  .valores ul { list-style: none; padding: 0; margin: 0; }
+  .valores li { padding: 10px 0; border-bottom: 1px solid var(--borde); }
+  .valores li:last-child { border-bottom: none; }
+  @media (max-width: 780px) { .cols { grid-template-columns: 1fr; } }
+</style>

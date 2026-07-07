@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Contacto — Delta Academia" description="Escribinos para conocer horarios, modalidad y cómo sumarte a los grupos de Delta Academia.">
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Contacto</span>
+      <h1>Hablemos</h1>
+      <p class="medida">
+        Contanos qué materia te interesa y te respondemos con días, horarios y modalidad.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor cols">
+      <div class="reveal">
+        <form id="form-contacto" class="card" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre" />
+            <span class="error" data-para="nombre"></span>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="tucorreo@ejemplo.com" />
+            <span class="error" data-para="email"></span>
+          </div>
+          <div class="campo">
+            <label for="materia">Materia de interés</label>
+            <select id="materia" name="materia">
+              <option value="">Elegí una opción…</option>
+              <option>Conceptos Contables</option>
+              <option>Contabilidad General I</option>
+              <option>Derecho y Actividad Empresarial I</option>
+              <option>Contabilidad General III</option>
+              <option>Otra / no sé todavía</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos en qué te podemos ayudar"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar consulta</button>
+          <p class="exito" id="exito" hidden>✅ ¡Gracias! Recibimos tu mensaje y te respondemos a la brevedad.</p>
+        </form>
+      </div>
+
+      <aside class="reveal">
+        <div class="card contacto-directo">
+          <h3>Contacto directo</h3>
+          <p style="color: var(--texto-suave);">Si preferís, escribinos por acá:</p>
+          <ul>
+            <li>💬 <a href="https://wa.me/59898521288" target="_blank" rel="noopener">WhatsApp +598 98 521 288</a></li>
+            <li>✉️ <a href="mailto:academiadelta5@gmail.com">academiadelta5@gmail.com</a></li>
+            <li>📷 <a href="https://instagram.com/delta.academiagr" target="_blank" rel="noopener">@delta.academiagr</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .cols { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--sp-4); align-items: start; }
+  .campo { margin-bottom: var(--sp-2); }
+  label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 6px; }
+  input, select, textarea {
+    width: 100%; padding: 12px 14px; font-family: var(--fuente-texto); font-size: 1rem;
+    border: 1px solid var(--borde); border-radius: var(--radio); background: var(--fondo);
+    transition: border-color var(--trans), box-shadow var(--trans);
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px rgba(29,58,110,0.12); }
+  input.invalido { border-color: #dc2626; }
+  .error { color: #dc2626; font-size: 0.82rem; display: block; margin-top: 4px; min-height: 1em; }
+  .exito { color: #047857; font-weight: 500; margin-top: var(--sp-2); text-align: center; }
+  .contacto-directo ul { list-style: none; padding: 0; margin: var(--sp-2) 0 0; }
+  .contacto-directo li { padding: 8px 0; }
+  @media (max-width: 780px) { .cols { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  const form = document.getElementById('form-contacto');
+  const exito = document.getElementById('exito');
+
+  function setError(campo, msg) {
+    const input = form.querySelector(`[name="${campo}"]`);
+    const span = form.querySelector(`.error[data-para="${campo}"]`);
+    if (span) span.textContent = msg;
+    if (input) input.classList.toggle('invalido', Boolean(msg));
+  }
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    const nombre = form.nombre.value.trim();
+    const email = form.email.value.trim();
+
+    if (!nombre) { setError('nombre', 'Ingresá tu nombre.'); ok = false; } else setError('nombre', '');
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) { setError('email', 'Ingresá un email válido.'); ok = false; } else setError('email', '');
+
+    if (ok) {
+      // 📌 Sin backend todavía: por ahora muestra confirmación.
+      // Después lo conectamos a tu email o WhatsApp (te explico cómo).
+      exito.hidden = false;
+      form.reset();
+    }
+  });
+</script>

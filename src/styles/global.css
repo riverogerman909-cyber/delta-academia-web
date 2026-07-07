@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Delta Academia — Sistema de diseño
+   Identidad oficial: azul #1D3A6E · ámbar #F59E0B · fondo claro · Playfair + DM Sans
+   ========================================================================== */
+
+:root {
+  /* Colores de marca */
+  --azul: #1D3A6E;
+  --azul-oscuro: #16305c;
+  --ambar: #F59E0B;
+  --fondo: #F8F9FA;
+  --texto: #1E293B;
+  --texto-suave: #64748B;
+  --azul-claro: #EEF2FF;
+  --blanco: #ffffff;
+  --borde: #e2e8f0;
+
+  /* Tipografías */
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-texto: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Espaciado (sistema 8px) */
+  --sp-1: 8px;  --sp-2: 16px; --sp-3: 24px; --sp-4: 32px;
+  --sp-6: 48px; --sp-8: 64px; --sp-12: 96px;
+
+  /* Otros */
+  --ancho: 1200px;
+  --radio: 8px;
+  --radio-card: 14px;
+  --sombra-1: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --sombra-2: 0 10px 30px rgba(29, 58, 110, 0.10);
+  --trans: 0.3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulo);
+  color: var(--azul);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin: 0 0 var(--sp-2);
+  font-weight: 700;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 var(--sp-2); }
+
+a { color: var(--azul); text-decoration: none; transition: color var(--trans); }
+a:hover { color: var(--ambar); }
+
+img { max-width: 100%; display: block; }
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 var(--sp-3);
+}
+
+.seccion { padding: var(--sp-12) 0; }
+
+.kicker {
+  display: inline-block;
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ambar);
+  margin-bottom: var(--sp-1);
+}
+
+/* Resalta palabras clave en ámbar, como en las piezas de marca */
+.ambar { color: var(--ambar); }
+
+/* -------- Botones -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 13px 26px;
+  border-radius: var(--radio);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--trans);
+  text-align: center;
+}
+.btn-primary { background: var(--azul); color: var(--blanco); }
+.btn-primary:hover { background: var(--azul-oscuro); color: var(--blanco); transform: translateY(-2px); box-shadow: var(--sombra-2); }
+.btn-secondary { background: transparent; color: var(--azul); border-color: var(--azul); }
+.btn-secondary:hover { background: var(--azul); color: var(--blanco); }
+.btn-ghost { background: transparent; color: var(--azul); padding: 10px 8px; }
+.btn-ghost:hover { color: var(--ambar); }
+.btn-ambar { background: var(--ambar); color: var(--azul); }
+.btn-ambar:hover { filter: brightness(1.05); transform: translateY(-2px); box-shadow: var(--sombra-2); color: var(--azul); }
+
+/* -------- Cards -------- */
+.grid {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-card);
+  padding: var(--sp-3);
+  box-shadow: var(--sombra-1);
+  transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans);
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--sombra-2); border-color: var(--azul); }
+
+/* -------- Animación al scroll -------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* -------- Utilidades -------- */
+.texto-centro { text-align: center; }
+.medida { max-width: 680px; }
+.medida.centro { margin-left: auto; margin-right: auto; }
+.mt-3 { margin-top: var(--sp-3); }
+.grupo-btn { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.grupo-btn.centro { justify-content: center; }
+
+/* Etiquetas / chips */
+.chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--azul-claro);
+  color: var(--azul);
+}
+.chip-ambar { background: #fef3c7; color: #92400e; }

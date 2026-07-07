@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import { materias } from '../../data/materias.js';
+---
+
+<Base title="Materias — Delta Academia" description="Cursos de FCEA: Conceptos Contables, Contabilidad General I y III, y Derecho y Actividad Empresarial I.">
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Nuestras materias</span>
+      <h1>Materias que preparamos</h1>
+      <p class="medida">
+        Estas son las unidades curriculares de FCEA que dictamos actualmente. Hacé clic en
+        cada una para ver el programa, la modalidad de evaluación y los objetivos.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion" style="padding-top: var(--sp-6);">
+    <div class="contenedor">
+      <div class="grid">
+        {materias.map((m) => (
+          <a href={`/materias/${m.slug}`} class="card materia-card reveal">
+            <div class="materia-top">
+              <span class="chip">{m.codigo}</span>
+              <span class="chip chip-ambar">{m.semestre}</span>
+            </div>
+            <h3>{m.nombre}</h3>
+            <p class="materia-resumen">{m.resumen}</p>
+            <div class="materia-meta">
+              <span>📐 {m.area}</span>
+              <span>🎓 {m.creditos} créditos</span>
+            </div>
+            <span class="materia-mas">Ver detalle →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .materia-card { display: flex; flex-direction: column; text-decoration: none; }
+  .materia-top { display: flex; gap: 8px; margin-bottom: var(--sp-2); flex-wrap: wrap; }
+  .materia-resumen { color: var(--texto-suave); font-size: 0.95rem; flex-grow: 1; }
+  .materia-meta { display: flex; flex-wrap: wrap; gap: var(--sp-2); font-size: 0.85rem; color: var(--texto-suave); margin: var(--sp-2) 0; }
+  .materia-mas { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
+  .materia-card:hover .materia-mas { color: var(--ambar); }
+</style>

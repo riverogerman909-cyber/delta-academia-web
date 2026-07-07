@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import { materias } from '../../data/materias.js';
+
+export function getStaticPaths() {
+  return materias.map((m) => ({ params: { slug: m.slug }, props: { materia: m } }));
+}
+
+const { materia } = Astro.props;
+---
+
+<Base title={`${materia.nombre} — Delta Academia`} description={materia.resumen}>
+  <section class="encabezado-materia">
+    <div class="contenedor reveal">
+      <a href="/materias" class="volver">← Todas las materias</a>
+      <div class="chips">
+        <span class="chip">{materia.codigo}</span>
+        <span class="chip chip-ambar">{materia.semestre}</span>
+        <span class="chip">{materia.area}</span>
+      </div>
+      <h1>{materia.nombre}</h1>
+      <p class="medida">{materia.resumen}</p>
+      <a href="/contacto" class="btn btn-ambar mt-3">Sumarme a esta materia</a>
+    </div>
+  </section>
+
+  <section class="seccion" style="padding-top: var(--sp-6);">
+    <div class="contenedor cols">
+      <div class="col-principal">
+        <div class="reveal">
+          <h2>Objetivo del curso</h2>
+          <p>{materia.objetivo}</p>
+        </div>
+
+        <div class="reveal" style="margin-top: var(--sp-6);">
+          <h2>Programa</h2>
+          <ol class="temario">
+            {materia.temario.map((t) => <li>{t}</li>)}
+          </ol>
+        </div>
+      </div>
+
+      <aside class="col-lateral reveal">
+        <div class="ficha">
+          <h3>Ficha rápida</h3>
+          <dl>
+            <dt>Código</dt><dd>{materia.codigo}</dd>
+            <dt>Semestre</dt><dd>{materia.semestre}</dd>
+            <dt>Créditos</dt><dd>{materia.creditos}</dd>
+            <dt>Previa</dt><dd>{materia.previa}</dd>
+          </dl>
+          <div class="ficha-eval">
+            <strong>Evaluación</strong>
+            <p>{materia.evaluacion}</p>
+          </div>
+          <a href="/contacto" class="btn btn-primary" style="width:100%; justify-content:center;">Consultar horarios</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-materia { padding: var(--sp-8) 0 var(--sp-4); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .volver { font-weight: 500; font-size: 0.9rem; display: inline-block; margin-bottom: var(--sp-2); }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: var(--sp-2); }
+
+  .cols { display: grid; grid-template-columns: 1fr 340px; gap: var(--sp-6); align-items: start; }
+  .temario { padding-left: 0; list-style: none; counter-reset: t; }
+  .temario li {
+    counter-increment: t; position: relative; padding: 14px 0 14px 48px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .temario li::before {
+    content: counter(t); position: absolute; left: 0; top: 12px;
+    width: 30px; height: 30px; border-radius: 8px;
+    background: var(--azul-claro); color: var(--azul);
+    font-weight: 700; font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .ficha { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio-card); padding: var(--sp-3); box-shadow: var(--sombra-1); position: sticky; top: 90px; }
+  .ficha h3 { margin-top: 0; }
+  .ficha dl { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0 0 var(--sp-2); }
+  .ficha dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--texto-suave); margin-top: 12px; }
+  .ficha dd { margin: 0; font-weight: 500; }
+  .ficha-eval { background: var(--fondo); border-radius: var(--radio); padding: var(--sp-2); margin-bottom: var(--sp-3); }
+  .ficha-eval strong { color: var(--azul); }
+  .ficha-eval p { margin: 6px 0 0; font-size: 0.9rem; color: var(--texto-suave); }
+
+  @media (max-width: 860px) {
+    .cols { grid-template-columns: 1fr; }
+    .ficha { position: static; }
+  }
+</style>

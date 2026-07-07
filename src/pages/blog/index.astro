@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// 📌 Cuando quieras publicar, sumamos artículos reales (te dejo el sistema listo en Markdown).
+const posts = [
+  { t: 'Cómo estudiar para el parcial de Conceptos Contables', d: 'Guía práctica con los temas que más se repiten y cómo organizarte.', tag: 'Estudio' },
+  { t: 'NIIF para PYMES: por dónde empezar', d: 'Un mapa simple de las secciones clave que vas a usar en Contabilidad General.', tag: 'Contabilidad' },
+  { t: 'Derecho para contadores: los conceptos que no podés saltear', d: 'Lo esencial de Derecho y Actividad Empresarial I, explicado fácil.', tag: 'Derecho' },
+];
+---
+
+<Base title="Blog — Delta Academia" description="Consejos de estudio, guías y recursos para las materias de FCEA.">
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Blog</span>
+      <h1>Consejos y recursos para estudiar</h1>
+      <p class="medida">
+        Guías de estudio, resúmenes y tips para las materias de FCEA.
+        <span class="ambar">Próximamente</span> — estos son ejemplos de lo que se viene.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="grid">
+        {posts.map((p) => (
+          <article class="card post reveal">
+            <span class="chip chip-ambar">{p.tag}</span>
+            <h3>{p.t}</h3>
+            <p style="color: var(--texto-suave);">{p.d}</p>
+            <span class="proximamente">Próximamente</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .post { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .proximamente { margin-top: auto; font-size: 0.82rem; color: var(--texto-suave); font-style: italic; }
+</style>

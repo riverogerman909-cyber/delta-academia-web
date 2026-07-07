@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import { materias } from '../data/materias.js';
+---
+
+<Base>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="contenedor hero-inner">
+      <div class="hero-texto reveal">
+        <span class="kicker">Delta Academia · Cursos de FCEA — UdelaR</span>
+        <h1>Entendé la contabilidad. <span class="ambar">Aprobá con confianza.</span></h1>
+        <p class="medida">
+          En Delta Academia acompañamos a estudiantes de la Facultad de Ciencias
+          Económicas en las materias que más cuestan. Teoría clara, práctica real
+          y acompañamiento cercano en cada paso.
+        </p>
+        <div class="grupo-btn">
+          <a href="/materias" class="btn btn-primary">Ver materias</a>
+          <a href="/contacto" class="btn btn-secondary">Quiero empezar</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <img src="/logo-icon.png" alt="" width="220" height="220" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIAS -->
+  <section class="seccion" id="materias">
+    <div class="contenedor">
+      <div class="texto-centro reveal">
+        <span class="kicker">Nuestras materias</span>
+        <h2>Nuestros cursos</h2>
+        <p class="medida centro">
+          Preparamos materias clave de la carrera con material propio y foco en el parcial.
+        </p>
+      </div>
+      <div class="grid mt-3">
+        {materias.map((m) => (
+          <a href={`/materias/${m.slug}`} class="card materia-card reveal">
+            <div class="materia-top">
+              <span class="chip">{m.codigo}</span>
+              <span class="chip chip-ambar">{m.semestre}</span>
+            </div>
+            <h3>{m.nombre}</h3>
+            <p class="materia-resumen">{m.resumen}</p>
+            <span class="materia-mas">Ver detalle →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS -->
+  <section class="seccion bloque-claro">
+    <div class="contenedor">
+      <div class="texto-centro reveal">
+        <span class="kicker">Cómo trabajamos</span>
+        <h2>Un método simple que funciona</h2>
+      </div>
+      <div class="grid mt-3">
+        <div class="card reveal">
+          <div class="icono">🎥</div>
+          <h3>Material grabado</h3>
+          <p>Teórico y práctico grabado, disponible siempre. Lo ves a tu ritmo, las veces que necesites.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icono">💻</div>
+          <h3>Zoom semanal</h3>
+          <p>Clases en vivo de acompañamiento todas las semanas para practicar y sacarte las dudas.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icono">🎯</div>
+          <h3>Enfoque en el examen</h3>
+          <p>Preparación orientada a parciales y exámenes, con ejercicios del tipo que realmente te toman.</p>
+        </div>
+      </div>
+      <div class="texto-centro mt-3 reveal">
+        <a href="/como-trabajamos" class="btn btn-ghost">Conocé el método completo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="seccion stats-band">
+    <div class="contenedor stats-grid reveal">
+      <div class="stat"><span class="stat-num">En vivo</span><span class="stat-lbl">Clases por Zoom cada semana</span></div>
+      <div class="stat"><span class="stat-num">24/7</span><span class="stat-lbl">Material grabado, teórico y práctico</span></div>
+      <div class="stat"><span class="stat-num">Al día</span><span class="stat-lbl">Alineado a los cursos de facultad</span></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="seccion cta">
+    <div class="contenedor texto-centro reveal">
+      <h2 style="color:#fff;">¿Listo para arrancar el semestre con el pie derecho?</h2>
+      <p class="medida centro" style="color:#dbe4f3;">
+        Escribinos y te contamos horarios, modalidad y cómo sumarte a los grupos.
+      </p>
+      <div class="grupo-btn centro mt-3">
+        <a href="/contacto" class="btn btn-ambar">Contactar ahora</a>
+        <a href="/materias" class="btn btn-secondary btn-sobre-oscuro">Ver materias</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: var(--sp-12) 0; background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .hero-inner { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--sp-6); align-items: center; }
+  .hero-visual { text-align: center; }
+  .hero-visual img { border-radius: 28px; box-shadow: var(--sombra-2); display: inline-block; }
+
+  .materia-card { display: flex; flex-direction: column; text-decoration: none; }
+  .materia-top { display: flex; gap: 8px; margin-bottom: var(--sp-2); flex-wrap: wrap; }
+  .materia-resumen { color: var(--texto-suave); font-size: 0.95rem; flex-grow: 1; }
+  .materia-mas { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
+  .materia-card:hover .materia-mas { color: var(--ambar); }
+
+  .bloque-claro { background: var(--blanco); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+  .icono { font-size: 2rem; margin-bottom: var(--sp-1); }
+
+  .stats-band { background: var(--azul); }
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); text-align: center; }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat-num { font-family: var(--fuente-titulo); font-size: 2.6rem; font-weight: 800; color: #fff; line-height: 1; }
+  .stat-lbl { color: var(--ambar); font-weight: 500; font-size: 0.95rem; }
+
+  .cta { background: linear-gradient(135deg, var(--azul) 0%, var(--azul-oscuro) 100%); }
+  .btn-sobre-oscuro { color: #fff; border-color: #fff; }
+  .btn-sobre-oscuro:hover { background: #fff; color: var(--azul); }
+
+  @media (max-width: 780px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero .grupo-btn { justify-content: center; }
+    .hero-visual { order: -1; }
+    .hero-visual img { width: 150px; height: 150px; }
+    .stats-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
+  }
+</style>
