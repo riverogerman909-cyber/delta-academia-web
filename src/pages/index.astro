@@ -45,6 +45,9 @@ import { materias } from '../data/materias.js';
             </div>
             <h3>{m.nombre}</h3>
             <p class="materia-resumen">{m.resumen}</p>
+            <div class="carreras" style="margin-bottom: var(--sp-2);">
+              {m.carreras.map((c) => <span class="chip-carrera">{c}</span>)}
+            </div>
             <span class="materia-mas">Ver detalle →</span>
           </a>
         ))}

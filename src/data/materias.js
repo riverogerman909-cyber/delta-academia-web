@@ -1,5 +1,6 @@
 // Datos de las materias, extraídos de las fichas oficiales de FCEA.
 // Para agregar o editar una materia, modificá este archivo: el sitio se actualiza solo.
+// `carreras`: carreras para las que la materia es OBLIGATORIA.
 
 export const materias = [
   {
@@ -7,8 +8,8 @@ export const materias = [
     nombre: 'Conceptos Contables',
     codigo: 'C10',
     semestre: 'Primer semestre',
-    creditos: 10,
     area: 'Contabilidad e Impuestos',
+    carreras: ['Cr. Público', 'Lic. Administración', 'Lic. Economía', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Tec. Gestión Universitaria'],
     previa: 'No requiere previas',
     resumen:
       'La puerta de entrada a la contabilidad. Aprendé a leer e interpretar la información contable como parte del sistema de información de una organización.',
@@ -32,8 +33,8 @@ export const materias = [
     nombre: 'Contabilidad General I',
     codigo: 'C20',
     semestre: 'Segundo semestre',
-    creditos: 10,
     area: 'Contabilidad e Impuestos',
+    carreras: ['Cr. Público', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'Conceptos Contables',
     resumen:
       'El primer paso en los estados financieros bajo NIIF para PYMES: efectivo, créditos, inventarios y bienes de uso.',
@@ -55,8 +56,8 @@ export const materias = [
     nombre: 'Derecho y Actividad Empresarial I',
     codigo: 'J23',
     semestre: 'Segundo semestre',
-    creditos: 10,
     area: 'Jurídica',
+    carreras: ['Cr. Público'],
     previa: 'No requiere previas',
     resumen:
       'Los cimientos jurídicos del contador: Derecho Privado, Comercial y Societario aplicados a la actividad empresarial.',
@@ -78,8 +79,8 @@ export const materias = [
     nombre: 'Contabilidad General III',
     codigo: 'C40',
     semestre: 'Cuarto semestre',
-    creditos: 10,
     area: 'Contabilidad e Impuestos',
+    carreras: ['Cr. Público', 'Téc. Administración'],
     previa: 'Contabilidad General II',
     resumen:
       'El cierre del ciclo: elaborá e interpretá un juego completo de estados financieros y su presentación ante la AIN.',
@@ -102,8 +103,8 @@ export const materias = [
     nombre: 'Legislación Laboral y Seguridad Social',
     codigo: 'C41',
     semestre: 'Cuarto semestre',
-    creditos: 10,
     area: 'Impuestos y Normativa',
+    carreras: ['Cr. Público', 'Téc. Administración', 'Tec. Adm. y Contabilidad'],
     previa: 'Conceptos Contables y Derecho y Actividad Empresarial I (Plan 2024)',
     resumen:
       'Todo lo que un contador necesita para liquidar sueldos y aportes: derecho laboral, cargas sociales, IRPF e indemnizaciones.',
@@ -128,8 +129,8 @@ export const materias = [
     nombre: 'Administración de las Relaciones del Trabajo',
     codigo: 'S60',
     semestre: 'Sexto semestre',
-    creditos: 10,
     area: 'Relaciones Laborales',
+    carreras: ['Lic. Administración'],
     previa: '15 créditos del área jurídica',
     resumen:
       'La gestión de las relaciones laborales: derecho individual y colectivo, negociación y seguridad social, aplicado a la administración.',
@@ -152,11 +153,11 @@ export const materias = [
     nombre: 'Cálculo 1A',
     codigo: '114A',
     semestre: 'Ambos semestres',
-    creditos: 5,
     area: 'Métodos Cuantitativos',
+    carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'No requiere previas',
     resumen:
-      'La primera parte de Cálculo (5 créditos): funciones, límites, continuidad y derivadas, con aplicaciones a la economía.',
+      'La primera parte de Cálculo: funciones, límites, continuidad y derivadas, con aplicaciones a la economía.',
     objetivo:
       'Introducir al estudiante en el estudio de funciones de variable real: límites, continuidad y derivabilidad, con aplicaciones a las ciencias económicas y de la administración.',
     temario: [
@@ -176,11 +177,11 @@ export const materias = [
     nombre: 'Cálculo 1B',
     codigo: '128A',
     semestre: 'Ambos semestres',
-    creditos: 5,
     area: 'Métodos Cuantitativos',
+    carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'Cálculo 1A',
     resumen:
-      'La segunda parte de Cálculo (5 créditos, con previa 1A): integrales, polinomio de Taylor y series.',
+      'La segunda parte de Cálculo (con previa 1A): integrales, polinomio de Taylor y series.',
     objetivo:
       'Introducir al estudiante en el cálculo numérico: aplicaciones de la función inversa, aproximación de funciones por polinomios (Taylor), integración de funciones y series.',
     temario: [
@@ -200,11 +201,11 @@ export const materias = [
     nombre: 'Cálculo 1',
     codigo: 'MC10',
     semestre: 'Ambos semestres',
-    creditos: 10,
     area: 'Métodos Cuantitativos',
+    carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Estadística'],
     previa: 'No requiere previas',
     resumen:
-      'El curso completo de Cálculo en un semestre (10 créditos): derivadas, integrales, Taylor y series, orientado a ciencias económicas.',
+      'El curso completo de Cálculo en un semestre: derivadas, integrales, Taylor y series, orientado a ciencias económicas.',
     objetivo:
       'Introducir al estudiante en el cálculo numérico: aplicaciones de la derivada y la función inversa, aproximación de funciones por polinomios, integración y nociones de sucesiones y series.',
     temario: [

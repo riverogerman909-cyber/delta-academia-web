@@ -155,3 +155,11 @@ img { max-width: 100%; display: block; }
   color: var(--azul);
 }
 .chip-ambar { background: #fef3c7; color: #92400e; }
+
+/* Etiquetas de carreras donde la materia es obligatoria */
+.carreras { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-carrera {
+  font-size: 0.72rem; font-weight: 500;
+  padding: 3px 10px; border-radius: 999px;
+  background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-suave);
+}

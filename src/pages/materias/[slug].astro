@@ -46,9 +46,15 @@ const { materia } = Astro.props;
           <dl>
             <dt>Código</dt><dd>{materia.codigo}</dd>
             <dt>Semestre</dt><dd>{materia.semestre}</dd>
-            <dt>Créditos</dt><dd>{materia.creditos}</dd>
+            <dt>Área</dt><dd>{materia.area}</dd>
             <dt>Previa</dt><dd>{materia.previa}</dd>
           </dl>
+          <div class="ficha-carreras">
+            <span class="ficha-label">Obligatoria en</span>
+            <div class="carreras">
+              {materia.carreras.map((c) => <span class="chip-carrera">{c}</span>)}
+            </div>
+          </div>
           <div class="ficha-eval">
             <strong>Evaluación</strong>
             <p>{materia.evaluacion}</p>
@@ -87,6 +93,8 @@ const { materia } = Astro.props;
   .ficha-eval { background: var(--fondo); border-radius: var(--radio); padding: var(--sp-2); margin-bottom: var(--sp-3); }
   .ficha-eval strong { color: var(--azul); }
   .ficha-eval p { margin: 6px 0 0; font-size: 0.9rem; color: var(--texto-suave); }
+  .ficha-carreras { margin-bottom: var(--sp-3); }
+  .ficha-label { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--texto-suave); margin-bottom: 8px; }
 
   @media (max-width: 860px) {
     .cols { grid-template-columns: 1fr; }

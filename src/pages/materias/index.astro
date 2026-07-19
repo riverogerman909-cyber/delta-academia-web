@@ -28,7 +28,9 @@ import { materias } from '../../data/materias.js';
             <p class="materia-resumen">{m.resumen}</p>
             <div class="materia-meta">
               <span>📐 {m.area}</span>
-              <span>🎓 {m.creditos} créditos</span>
+            </div>
+            <div class="carreras carreras-card">
+              {m.carreras.map((c) => <span class="chip-carrera">{c}</span>)}
             </div>
             <span class="materia-mas">Ver detalle →</span>
           </a>
@@ -43,7 +45,8 @@ import { materias } from '../../data/materias.js';
   .materia-card { display: flex; flex-direction: column; text-decoration: none; }
   .materia-top { display: flex; gap: 8px; margin-bottom: var(--sp-2); flex-wrap: wrap; }
   .materia-resumen { color: var(--texto-suave); font-size: 0.95rem; flex-grow: 1; }
-  .materia-meta { display: flex; flex-wrap: wrap; gap: var(--sp-2); font-size: 0.85rem; color: var(--texto-suave); margin: var(--sp-2) 0; }
+  .materia-meta { display: flex; flex-wrap: wrap; gap: var(--sp-2); font-size: 0.85rem; color: var(--texto-suave); margin: var(--sp-2) 0 10px; }
+  .carreras-card { margin-bottom: var(--sp-2); }
   .materia-mas { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
   .materia-card:hover .materia-mas { color: var(--ambar); }
 </style>
