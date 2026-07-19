@@ -97,6 +97,128 @@ export const materias = [
     evaluacion:
       '3 revisiones + 4 controles de lectura. Exonera con 50 puntos en total.',
   },
+  {
+    slug: 'legislacion-laboral-seguridad-social',
+    nombre: 'Legislación Laboral y Seguridad Social',
+    codigo: 'C41',
+    semestre: 'Cuarto semestre',
+    creditos: 10,
+    area: 'Impuestos y Normativa',
+    previa: 'Conceptos Contables y Derecho y Actividad Empresarial I (Plan 2024)',
+    resumen:
+      'Todo lo que un contador necesita para liquidar sueldos y aportes: derecho laboral, cargas sociales, IRPF e indemnizaciones.',
+    objetivo:
+      'Que el estudiante identifique los conceptos de Derecho Laboral y de la Seguridad Social, aplique la normativa para la liquidación de haberes y los tributos relacionados, y resuelva situaciones cotidianas de las relaciones de trabajo en las organizaciones.',
+    temario: [
+      'Derecho individual del trabajo: el contrato de trabajo',
+      'Jornada de trabajo y descansos',
+      'Remuneraciones, aguinaldo, feriados y horas extras',
+      'Licencias y salario vacacional',
+      'Despido e indemnizaciones',
+      'Tributación a la seguridad social y materia gravada',
+      'Sistema Nacional Integrado de Salud (FONASA)',
+      'IRPF de dependientes (Categoría II)',
+      'Prestaciones: seguros de accidentes, enfermedad y paro',
+    ],
+    evaluacion:
+      '2 revisiones presenciales (40 y 60 puntos). Exonera con 50 puntos en total, con mínimos por revisión.',
+  },
+  {
+    slug: 'administracion-relaciones-del-trabajo',
+    nombre: 'Administración de las Relaciones del Trabajo',
+    codigo: 'S60',
+    semestre: 'Sexto semestre',
+    creditos: 10,
+    area: 'Relaciones Laborales',
+    previa: '15 créditos del área jurídica',
+    resumen:
+      'La gestión de las relaciones laborales: derecho individual y colectivo, negociación y seguridad social, aplicado a la administración.',
+    objetivo:
+      'Brindar un conocimiento teórico y práctico de la gestión de las relaciones de trabajo en el marco del Derecho del Trabajo uruguayo, para comprender las situaciones de la vida laboral y dar las respuestas adecuadas a cada una.',
+    temario: [
+      'El Derecho del Trabajo: surgimiento, fuentes y principios',
+      'Derecho individual: contratación laboral y condiciones de trabajo',
+      'Remuneraciones y tiempo de trabajo',
+      'Extinción de la relación laboral',
+      'Introducción a la Seguridad Social y su financiación',
+      'Prestaciones de actividad y Sistema Nacional Integrado de Salud',
+      'Derecho colectivo: sindicatos, conflicto y negociación colectiva',
+    ],
+    evaluacion:
+      '2 parciales escritos presenciales. Exonera con 50 puntos en total (mínimo 40% en cada uno).',
+  },
+  {
+    slug: 'calculo-1a',
+    nombre: 'Cálculo 1A',
+    codigo: '114A',
+    semestre: 'Ambos semestres',
+    creditos: 5,
+    area: 'Métodos Cuantitativos',
+    previa: 'No requiere previas',
+    resumen:
+      'La primera parte de Cálculo (5 créditos): funciones, límites, continuidad y derivadas, con aplicaciones a la economía.',
+    objetivo:
+      'Introducir al estudiante en el estudio de funciones de variable real: límites, continuidad y derivabilidad, con aplicaciones a las ciencias económicas y de la administración.',
+    temario: [
+      'Funciones: concepto, operaciones, composición e inversa',
+      'Funciones lineales, cuadráticas, exponenciales y logarítmicas',
+      'Aplicaciones económicas: ingreso, costo, utilidad, oferta y demanda',
+      'Límites de funciones y técnicas de cálculo',
+      'Continuidad: teoremas de Bolzano, Weierstrass y Darboux',
+      'Derivabilidad y cálculo de derivadas',
+      'Optimización, funciones marginales y elasticidad de la demanda',
+    ],
+    evaluacion:
+      '2 revisiones presenciales (40 y 60 puntos). Exonera con 50 puntos en total.',
+  },
+  {
+    slug: 'calculo-1b',
+    nombre: 'Cálculo 1B',
+    codigo: '128A',
+    semestre: 'Ambos semestres',
+    creditos: 5,
+    area: 'Métodos Cuantitativos',
+    previa: 'Cálculo 1A',
+    resumen:
+      'La segunda parte de Cálculo (5 créditos, con previa 1A): integrales, polinomio de Taylor y series.',
+    objetivo:
+      'Introducir al estudiante en el cálculo numérico: aplicaciones de la función inversa, aproximación de funciones por polinomios (Taylor), integración de funciones y series.',
+    temario: [
+      'Funciones invertibles y derivada de la inversa',
+      'Aproximación de funciones por polinomios: teorema de Taylor',
+      'Integración: primitivas y teorema fundamental del cálculo',
+      'Métodos de integración: partes, sustitución y fracciones simples',
+      'Aplicaciones de la integral y cálculo de áreas',
+      'Integrales impropias',
+      'Series geométricas',
+    ],
+    evaluacion:
+      '2 parciales presenciales (40 y 60 puntos). Exonera con 50 puntos en total.',
+  },
+  {
+    slug: 'calculo-1',
+    nombre: 'Cálculo 1',
+    codigo: 'MC10',
+    semestre: 'Ambos semestres',
+    creditos: 10,
+    area: 'Métodos Cuantitativos',
+    previa: 'No requiere previas',
+    resumen:
+      'El curso completo de Cálculo en un semestre (10 créditos): derivadas, integrales, Taylor y series, orientado a ciencias económicas.',
+    objetivo:
+      'Introducir al estudiante en el cálculo numérico: aplicaciones de la derivada y la función inversa, aproximación de funciones por polinomios, integración y nociones de sucesiones y series.',
+    temario: [
+      'Aplicaciones de la derivada: regla de la cadena y teorema del valor medio',
+      'Problemas de extremos, funciones marginales y elasticidad',
+      'Función inversa y funciones trigonométricas',
+      'Aproximación por polinomios: teorema de Taylor',
+      'Series geométricas',
+      'Integración: teorema fundamental, regla de Barrow y métodos',
+      'Cálculo de áreas e integrales impropias',
+    ],
+    evaluacion:
+      '2 parciales presenciales (40 y 60 puntos). Exonera con 50 puntos en total.',
+  },
 ];
 
 export function getMateria(slug) {
