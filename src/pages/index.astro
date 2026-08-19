@@ -1,6 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import { materias } from '../data/materias.js';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const testimonios = [
+  { t: 'La verdad no sé si hubiese salvado sin las clases. Todo el material re ordenado, todo a la mano, y disponible 24/7.', m: 'Conceptos Contables' },
+  { t: 'Sos un crá: siempre sacándonos cualquier duda y haciéndonos todo más fácil de entender y de aprender.', m: 'Conceptos Contables' },
+  { t: 'Me re gustó la cantidad de materiales y la disponibilidad que había para hacer consultas. Eso me re ayudó.', m: 'Conceptos Contables' },
+];
 ---
 
 <Base>
@@ -18,6 +29,11 @@ import { materias } from '../data/materias.js';
         <div class="grupo-btn">
           <a href="/materias" class="btn btn-primary">Ver materias</a>
           <a href="/contacto" class="btn btn-secondary">Quiero empezar</a>
+        </div>
+        <div class="hero-chips">
+          <span>🎥 Material grabado 24/7</span>
+          <span>💻 Zoom semanal en vivo</span>
+          <span>🎯 Práctica tipo parcial</span>
         </div>
       </div>
       <div class="hero-visual reveal" aria-hidden="true">
@@ -94,6 +110,48 @@ import { materias } from '../data/materias.js';
     </div>
   </section>
 
+  <!-- TESTIMONIOS -->
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="texto-centro reveal">
+        <span class="kicker">Testimonios</span>
+        <h2>Algunos de los mensajes que nos llegan</h2>
+      </div>
+      <div class="grid mt-3">
+        {testimonios.map((q) => (
+          <figure class="card quote reveal">
+            <span class="quote-mark">“</span>
+            <blockquote>{q.t}</blockquote>
+            <figcaption>Estudiante de {q.m}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEL BLOG -->
+  <section class="seccion bloque-claro">
+    <div class="contenedor">
+      <div class="texto-centro reveal">
+        <span class="kicker">Del blog</span>
+        <h2>Ideas claras para estudiar mejor</h2>
+      </div>
+      <div class="grid mt-3">
+        {posts.map((p) => (
+          <a href={`/blog/${p.id}`} class="card post-mini reveal">
+            <span class="chip chip-ambar">{p.data.tag}</span>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <span class="post-firma">Por {p.data.author} →</span>
+          </a>
+        ))}
+      </div>
+      <div class="texto-centro mt-3 reveal">
+        <a href="/blog" class="btn btn-ghost">Ver todos los artículos →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="seccion cta">
     <div class="contenedor texto-centro reveal">
@@ -110,7 +168,29 @@ import { materias } from '../data/materias.js';
 </Base>
 
 <style>
-  .hero { padding: var(--sp-12) 0; background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .hero { padding: var(--sp-12) 0; background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); position: relative; overflow: hidden; }
+  .hero::after {
+    content: 'Δ'; position: absolute; right: -30px; bottom: -110px;
+    font-family: var(--fuente-titulo); font-weight: 700; font-size: 34rem;
+    color: var(--azul); opacity: 0.05; line-height: 1; pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--sp-3); }
+  .hero-chips span {
+    font-size: 0.85rem; font-weight: 500; color: var(--azul);
+    background: var(--blanco); border: 1px solid var(--borde);
+    padding: 8px 14px; border-radius: 999px; box-shadow: var(--sombra-1);
+  }
+
+  .quote { position: relative; padding-top: var(--sp-4); }
+  .quote-mark { position: absolute; top: 6px; left: 18px; font-family: var(--fuente-titulo); font-size: 3.6rem; color: var(--ambar); line-height: 1; }
+  .quote blockquote { margin: 0 0 var(--sp-2); font-style: italic; color: var(--texto); }
+  .quote figcaption { font-size: 0.85rem; font-weight: 700; color: var(--texto-suave); }
+
+  .post-mini { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; text-decoration: none; }
+  .post-mini p { color: var(--texto-suave); font-size: 0.92rem; flex-grow: 1; margin: 0; }
+  .post-firma { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
+  .post-mini:hover .post-firma { color: var(--ambar); }
   .hero-inner { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--sp-6); align-items: center; }
   .hero-visual { text-align: center; }
   .hero-visual img { border-radius: 28px; box-shadow: var(--sombra-2); display: inline-block; }

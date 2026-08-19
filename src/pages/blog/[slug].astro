@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fecha = post.data.date.toLocaleDateString('es-UY', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<Base title={`${post.data.title} — Delta Academia`} description={post.data.description}>
+  <article>
+    <header class="post-cabecera">
+      <div class="contenedor reveal">
+        <a href="/blog" class="volver">← Todos los artículos</a>
+        <span class="chip chip-ambar">{post.data.tag}</span>
+        <h1 class="post-titulo">{post.data.title}</h1>
+        <div class="firma">
+          <div class="firma-avatar">GR</div>
+          <div>
+            <span class="firma-nombre">{post.data.author}</span>
+            <span class="firma-detalle">Economista y Contador Público · <time datetime={post.data.date.toISOString()}>{fecha}</time></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="contenedor">
+      <div class="prosa reveal">
+        <Content />
+      </div>
+
+      <aside class="post-cta reveal">
+        <h3>¿Cursando esta materia?</h3>
+        <p>Material grabado, clases semanales por Zoom y práctica tipo parcial.</p>
+        <div class="grupo-btn">
+          <a href="/materias" class="btn btn-primary">Ver materias</a>
+          <a href="/contacto" class="btn btn-secondary">Escribinos</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .post-cabecera { padding: var(--sp-8) 0 var(--sp-4); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); margin-bottom: var(--sp-6); }
+  .volver { font-weight: 500; font-size: 0.9rem; display: inline-block; margin-bottom: var(--sp-3); }
+  .post-titulo { max-width: 20ch; margin-top: var(--sp-2); }
+  .firma { display: flex; align-items: center; gap: 14px; margin-top: var(--sp-3); }
+  .firma-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--azul); color: var(--ambar);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-family: var(--fuente-titulo); font-size: 1.1rem;
+  }
+  .firma-nombre { display: block; font-weight: 700; color: var(--azul); }
+  .firma-detalle { display: block; font-size: 0.85rem; color: var(--texto-suave); }
+
+  .prosa { max-width: 720px; font-size: 1.06rem; }
+  .prosa :global(h2) { margin-top: var(--sp-6); font-size: 1.6rem; }
+  .prosa :global(p) { margin-bottom: var(--sp-2); }
+  .prosa :global(li) { margin-bottom: 8px; }
+  .prosa :global(strong) { color: var(--azul); }
+  .prosa :global(blockquote) { border-left: 4px solid var(--ambar); margin: var(--sp-3) 0; padding: 4px 0 4px var(--sp-2); color: var(--texto-suave); }
+  .prosa :global(table) { border-collapse: collapse; width: 100%; margin: var(--sp-3) 0; }
+  .prosa :global(th), .prosa :global(td) { border: 1px solid var(--borde); padding: 10px 14px; text-align: left; font-size: 0.95rem; }
+  .prosa :global(th) { background: var(--azul-claro); color: var(--azul); }
+  .prosa :global(hr) { border: none; border-top: 1px solid var(--borde); margin: var(--sp-4) 0; }
+  .prosa :global(em) { color: inherit; }
+
+  .post-cta {
+    max-width: 720px; margin: var(--sp-6) 0 0;
+    background: var(--azul-claro); border-radius: var(--radio-card);
+    padding: var(--sp-3);
+  }
+  .post-cta h3 { margin-top: 0; }
+  .post-cta p { color: var(--texto-suave); }
+</style>
