@@ -11,6 +11,7 @@ export const materias = [
     area: 'Contabilidad e Impuestos',
     carreras: ['Cr. Público', 'Lic. Administración', 'Lic. Economía', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Tec. Gestión Universitaria'],
     previa: 'No requiere previas',
+    docentes: ['Cr. Ec. Germán Rivero'],
     resumen:
       'La puerta de entrada a la contabilidad. Aprendé a leer e interpretar la información contable como parte del sistema de información de una organización.',
     objetivo:
@@ -36,6 +37,7 @@ export const materias = [
     area: 'Contabilidad e Impuestos',
     carreras: ['Cr. Público', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'Conceptos Contables',
+    docentes: ['Cr. Ec. Germán Rivero'],
     resumen:
       'El primer paso en los estados financieros bajo NIIF para PYMES: efectivo, créditos, inventarios y bienes de uso.',
     objetivo:
@@ -59,6 +61,7 @@ export const materias = [
     area: 'Jurídica',
     carreras: ['Cr. Público'],
     previa: 'No requiere previas',
+    docentes: ['Cr. Ec. Germán Rivero'],
     resumen:
       'Los cimientos jurídicos del contador: Derecho Privado, Comercial y Societario aplicados a la actividad empresarial.',
     objetivo:
@@ -82,6 +85,7 @@ export const materias = [
     area: 'Impuestos y Normativa',
     carreras: ['Cr. Público', 'Téc. Administración', 'Tec. Adm. y Contabilidad'],
     previa: 'Conceptos Contables y Derecho y Actividad Empresarial I (Plan 2024)',
+    docentes: ['Cra. Camila Gil'],
     resumen:
       'Todo lo que un contador necesita para liquidar sueldos y aportes: derecho laboral, cargas sociales, IRPF e indemnizaciones.',
     objetivo:
@@ -108,6 +112,7 @@ export const materias = [
     area: 'Relaciones Laborales',
     carreras: ['Lic. Administración'],
     previa: '15 créditos del área jurídica',
+    docentes: ['Cra. Camila Gil'],
     resumen:
       'La gestión de las relaciones laborales: derecho individual y colectivo, negociación y seguridad social, aplicado a la administración.',
     objetivo:
@@ -132,6 +137,7 @@ export const materias = [
     area: 'Métodos Cuantitativos',
     carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'No requiere previas',
+    docentes: ['Lic. Belén Retamosa'],
     resumen:
       'La primera parte de Cálculo: funciones, límites, continuidad y derivadas, con aplicaciones a la economía.',
     objetivo:
@@ -156,6 +162,7 @@ export const materias = [
     area: 'Métodos Cuantitativos',
     carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'Cálculo 1A',
+    docentes: ['Lic. Belén Retamosa'],
     resumen:
       'La segunda parte de Cálculo (con previa 1A): integrales, polinomio de Taylor y series.',
     objetivo:
@@ -180,6 +187,7 @@ export const materias = [
     area: 'Métodos Cuantitativos',
     carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Estadística'],
     previa: 'No requiere previas',
+    docentes: ['Lic. Belén Retamosa'],
     resumen:
       'El curso completo de Cálculo en un semestre: derivadas, integrales, Taylor y series, orientado a ciencias económicas.',
     objetivo:
