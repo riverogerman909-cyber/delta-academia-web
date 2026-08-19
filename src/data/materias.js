@@ -9,7 +9,6 @@ export const materias = [
     codigo: 'C10',
     semestre: 'Primer semestre',
     area: 'Contabilidad e Impuestos',
-    catedra: 'Jaime Borgiani',
     carreras: ['Cr. Público', 'Lic. Administración', 'Lic. Economía', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Tec. Gestión Universitaria'],
     previa: 'No requiere previas',
     resumen:
@@ -35,7 +34,6 @@ export const materias = [
     codigo: 'C20',
     semestre: 'Segundo semestre',
     area: 'Contabilidad e Impuestos',
-    catedra: 'Mariana Ramos',
     carreras: ['Cr. Público', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'Conceptos Contables',
     resumen:
@@ -59,7 +57,6 @@ export const materias = [
     codigo: 'J23',
     semestre: 'Segundo semestre',
     area: 'Jurídica',
-    catedra: 'Jenifer Alfaro Borges',
     carreras: ['Cr. Público'],
     previa: 'No requiere previas',
     resumen:
@@ -78,37 +75,11 @@ export const materias = [
       '2 revisiones múltiple opción (una virtual, una presencial). Exonera con 50 puntos en total.',
   },
   {
-    slug: 'contabilidad-general-iii',
-    nombre: 'Contabilidad General III',
-    codigo: 'C40',
-    semestre: 'Cuarto semestre',
-    area: 'Contabilidad e Impuestos',
-    catedra: 'Martín Nuñez',
-    carreras: ['Cr. Público', 'Téc. Administración'],
-    previa: 'Contabilidad General II',
-    resumen:
-      'El cierre del ciclo: elaborá e interpretá un juego completo de estados financieros y su presentación ante la AIN.',
-    objetivo:
-      'Desarrollar las competencias para elaborar e interpretar un juego completo de estados financieros al cierre de un ejercicio según NIIF para PYMES, incluyendo su presentación en la Central de Balances Electrónica (CBE) ante la AIN.',
-    temario: [
-      'La contabilidad y los distintos tipos de informes (financieros y de sostenibilidad)',
-      'Tareas de preparación de estados financieros y control interno',
-      'Ajustes para el reconocimiento y medición de activos, pasivos, ingresos y gastos',
-      'Presentación de estados financieros: ESF, ERI, ECP, EFE y Notas',
-      'Análisis integral de un juego completo de estados financieros',
-      'Presentación en la Central de Balances Electrónica (CBE) y taxonomía XBRL',
-      'Elaboración de informes financieros mensuales internos',
-    ],
-    evaluacion:
-      '2 revisiones presenciales (44 puntos cada una) + 4 controles de lectura (12 puntos). Exonera con 50 puntos en total.',
-  },
-  {
     slug: 'legislacion-laboral-seguridad-social',
     nombre: 'Legislación Laboral y Seguridad Social',
     codigo: 'C41',
     semestre: 'Cuarto semestre',
     area: 'Impuestos y Normativa',
-    catedra: 'Adriana Xalambri',
     carreras: ['Cr. Público', 'Téc. Administración', 'Tec. Adm. y Contabilidad'],
     previa: 'Conceptos Contables y Derecho y Actividad Empresarial I (Plan 2024)',
     resumen:
@@ -135,7 +106,6 @@ export const materias = [
     codigo: 'S60',
     semestre: 'Sexto semestre',
     area: 'Relaciones Laborales',
-    catedra: 'Adriana Xalambri',
     carreras: ['Lic. Administración'],
     previa: '15 créditos del área jurídica',
     resumen:
@@ -160,7 +130,6 @@ export const materias = [
     codigo: '114A',
     semestre: 'Ambos semestres',
     area: 'Métodos Cuantitativos',
-    catedra: 'Pedro Sakorko',
     carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'No requiere previas',
     resumen:
@@ -185,7 +154,6 @@ export const materias = [
     codigo: '128A',
     semestre: 'Ambos semestres',
     area: 'Métodos Cuantitativos',
-    catedra: 'Gabriel Coates',
     carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Economía Agrícola'],
     previa: 'Cálculo 1A',
     resumen:
@@ -210,7 +178,6 @@ export const materias = [
     codigo: 'MC10',
     semestre: 'Ambos semestres',
     area: 'Métodos Cuantitativos',
-    catedra: 'Marcelo Cerminara',
     carreras: ['Cr. Público', 'Lic. Economía', 'Lic. Administración', 'Téc. Administración', 'Tec. Adm. y Contabilidad', 'Lic. Estadística'],
     previa: 'No requiere previas',
     resumen:

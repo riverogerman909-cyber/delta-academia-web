@@ -1,4 +1,5 @@
 ---
+import { materias } from '../data/materias.js';
 const anio = new Date().getFullYear();
 ---
 
@@ -15,10 +16,9 @@ const anio = new Date().getFullYear();
     <div>
       <h4 class="footer-titulo">Materias</h4>
       <ul>
-        <li><a href="/materias/conceptos-contables">Conceptos Contables</a></li>
-        <li><a href="/materias/contabilidad-general-i">Contabilidad General I</a></li>
-        <li><a href="/materias/derecho-actividad-empresarial-i">Derecho y Act. Empresarial I</a></li>
-        <li><a href="/materias/contabilidad-general-iii">Contabilidad General III</a></li>
+        {materias.map((m) => (
+          <li><a href={`/materias/${m.slug}`}>{m.nombre}</a></li>
+        ))}
       </ul>
     </div>
 
