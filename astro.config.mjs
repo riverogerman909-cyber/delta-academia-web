@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
-// Cambiá 'site' por tu dominio final cuando lo compres (mejora el SEO y los sitemaps).
+// 'site' es el dominio canónico: se usa para el sitemap, los canonical y el SEO.
 export default defineConfig({
-  site: 'https://delta-academia.pages.dev',
+  site: 'https://deltaacademiagr.com',
+  integrations: [sitemap()],
 });

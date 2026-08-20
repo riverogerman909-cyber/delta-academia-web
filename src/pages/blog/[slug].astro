@@ -15,9 +15,30 @@ const fecha = post.data.date.toLocaleDateString('es-UY', {
   month: 'long',
   year: 'numeric',
 });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  inLanguage: 'es',
+  author: {
+    '@type': 'Person',
+    name: post.data.author,
+    jobTitle: 'Economista y Contador Público',
+  },
+  publisher: {
+    '@type': 'EducationalOrganization',
+    name: 'Delta Academia',
+    url: 'https://deltaacademiagr.com',
+    logo: { '@type': 'ImageObject', url: 'https://deltaacademiagr.com/logo-icon.png' },
+  },
+  mainEntityOfPage: `https://deltaacademiagr.com/blog/${post.id}`,
+};
 ---
 
-<Base title={`${post.data.title} — Delta Academia`} description={post.data.description}>
+<Base title={`${post.data.title} — Delta Academia`} description={post.data.description} ogType="article" schema={[articleSchema]}>
   <article>
     <header class="post-cabecera">
       <div class="contenedor reveal">

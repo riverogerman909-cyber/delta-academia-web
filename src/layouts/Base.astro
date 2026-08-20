@@ -4,11 +4,30 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const {
-  title = 'Delta Academia — Cursos de FCEA',
-  description = 'Delta Academia — acompañamiento paralelo a la facultad para estudiantes de FCEA (UdelaR). Cursos de contabilidad, economía y derecho, con clases por Zoom y material grabado.',
+  title = 'Delta Academia | Cursos de FCEA: Contabilidad, Cálculo y Derecho',
+  description = 'Academia online para estudiantes de FCEA (UdelaR, Uruguay). Cursos de Conceptos Contables, Contabilidad General 1, Cálculo 1, Derecho y más, con material grabado y clases semanales por Zoom.',
+  ogType = 'website',
+  schema = [],
 } = Astro.props;
 
 const url = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.pathname;
+const ogImage = Astro.site ? new URL('/logo-wordmark.png', Astro.site).href : '/logo-wordmark.png';
+
+// Datos estructurados de la organización (presentes en todo el sitio)
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'Delta Academia',
+  url: 'https://deltaacademiagr.com',
+  logo: 'https://deltaacademiagr.com/logo-icon.png',
+  description:
+    'Academia online para estudiantes de la Facultad de Ciencias Económicas y de Administración (FCEA, UdelaR). Cursos de contabilidad, cálculo y derecho con material grabado y clases semanales por Zoom.',
+  email: 'academiadelta5@gmail.com',
+  areaServed: { '@type': 'Country', name: 'Uruguay' },
+  sameAs: ['https://www.instagram.com/delta.academiagr'],
+};
+
+const schemas = [orgSchema, ...schema];
 ---
 
 <!doctype html>
@@ -21,13 +40,21 @@ const url = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.ur
     <meta name="description" content={description} />
 
     <!-- SEO / redes sociales -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Delta Academia" />
+    <meta property="og:locale" content="es_UY" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/logo-wordmark.png" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={url} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={url} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Datos estructurados (JSON-LD) -->
+    {schemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
 
     <!-- Fuentes de marca -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -7,9 +7,45 @@ export function getStaticPaths() {
 }
 
 const { materia } = Astro.props;
+
+const seoTitle = `Curso de ${materia.nombre} (${materia.codigo}) — FCEA | Delta Academia`;
+const seoDesc = `Curso online de ${materia.nombre} para estudiantes de FCEA (UdelaR): material grabado, clases semanales por Zoom y práctica tipo parcial. ${materia.resumen}`;
+
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `${materia.nombre} (FCEA — UdelaR)`,
+  courseCode: materia.codigo,
+  description: seoDesc,
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'Delta Academia',
+    url: 'https://deltaacademiagr.com',
+  },
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'online',
+    instructor: (materia.docentes || []).map((d) => ({ '@type': 'Person', name: d })),
+  },
+  offers: {
+    '@type': 'Offer',
+    category: 'Paid',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://deltaacademiagr.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Materias', item: 'https://deltaacademiagr.com/materias' },
+    { '@type': 'ListItem', position: 3, name: materia.nombre, item: `https://deltaacademiagr.com/materias/${materia.slug}` },
+  ],
+};
 ---
 
-<Base title={`${materia.nombre} — Delta Academia`} description={materia.resumen}>
+<Base title={seoTitle} description={seoDesc} schema={[courseSchema, breadcrumbSchema]}>
   <section class="encabezado-materia">
     <div class="contenedor reveal">
       <a href="/materias" class="volver">← Todas las materias</a>

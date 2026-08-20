@@ -7,6 +7,35 @@ const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
 
+const faqs = [
+  {
+    q: '¿Qué materias de FCEA prepara Delta Academia?',
+    a: 'Preparamos Conceptos Contables, Contabilidad General 1, Derecho y Actividad Empresarial I, Legislación Laboral y Seguridad Social, Administración de las Relaciones del Trabajo, y Cálculo 1 en sus tres versiones (Cálculo 1A, Cálculo 1B y MC10).',
+  },
+  {
+    q: '¿Las clases son online o presenciales?',
+    a: 'Nuestra modalidad es online: tenés todo el material teórico y práctico grabado para ver a tu ritmo, y cada semana una clase en vivo por Zoom para practicar y sacarte las dudas.',
+  },
+  {
+    q: '¿Sirven para exonerar y también para el examen?',
+    a: 'Sí. Acompañamos tanto la preparación de las revisiones y parciales durante el curso como la preparación de exámenes, con ejercicios del tipo que realmente se toman en FCEA.',
+  },
+  {
+    q: '¿Cómo me inscribo a un curso?',
+    a: 'Escribinos por WhatsApp o desde la página de contacto y te pasamos días, horarios y modalidad de la materia que te interesa.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 const testimonios = [
   { t: 'La verdad no sé si hubiese salvado sin las clases. Todo el material re ordenado, todo a la mano, y disponible 24/7.', m: 'Conceptos Contables' },
   { t: 'Sos un crá: siempre sacándonos cualquier duda y haciéndonos todo más fácil de entender y de aprender.', m: 'Conceptos Contables' },
@@ -14,7 +43,7 @@ const testimonios = [
 ];
 ---
 
-<Base>
+<Base schema={[faqSchema]}>
   <!-- HERO -->
   <section class="hero">
     <div class="contenedor hero-inner">
@@ -22,9 +51,10 @@ const testimonios = [
         <span class="kicker">Delta Academia · Cursos de FCEA — UdelaR</span>
         <h1>Entendé la contabilidad. <span class="ambar">Aprobá con confianza.</span></h1>
         <p class="medida">
-          En Delta Academia acompañamos a estudiantes de la Facultad de Ciencias
-          Económicas en las materias que más cuestan. Teoría clara, práctica real
-          y acompañamiento cercano en cada paso.
+          Somos una academia online para estudiantes de la Facultad de Ciencias
+          Económicas y de Administración (FCEA — UdelaR). Cursos de contabilidad,
+          cálculo y derecho con teoría clara, práctica real y acompañamiento
+          cercano en cada paso.
         </p>
         <div class="grupo-btn">
           <a href="/materias" class="btn btn-primary">Ver materias</a>
@@ -152,6 +182,24 @@ const testimonios = [
     </div>
   </section>
 
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="texto-centro reveal">
+        <span class="kicker">Preguntas frecuentes</span>
+        <h2>Lo que siempre nos preguntan</h2>
+      </div>
+      <div class="faq-lista mt-3">
+        {faqs.map((f) => (
+          <details class="faq reveal">
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="seccion cta">
     <div class="contenedor texto-centro reveal">
@@ -191,6 +239,13 @@ const testimonios = [
   .post-mini p { color: var(--texto-suave); font-size: 0.92rem; flex-grow: 1; margin: 0; }
   .post-firma { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
   .post-mini:hover .post-firma { color: var(--ambar); }
+
+  .faq-lista { max-width: 780px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio-card); padding: 4px 22px; box-shadow: var(--sombra-1); }
+  .faq summary { font-weight: 700; color: var(--azul); cursor: pointer; padding: 16px 0; list-style: none; position: relative; padding-right: 30px; }
+  .faq summary::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); color: var(--ambar); font-size: 1.4rem; font-weight: 700; transition: transform var(--trans); }
+  .faq[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq p { color: var(--texto-suave); margin: 0 0 var(--sp-2); }
   .hero-inner { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--sp-6); align-items: center; }
   .hero-visual { text-align: center; }
   .hero-visual img { border-radius: 28px; box-shadow: var(--sombra-2); display: inline-block; }
