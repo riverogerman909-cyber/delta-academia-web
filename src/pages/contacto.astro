@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { materias } from '../data/materias.js';
 ---
 
 <Base title="Contacto — Delta Academia | Cursos de FCEA" description="Escribinos por WhatsApp o email para conocer días, horarios y modalidad de los cursos de FCEA (UdelaR): contabilidad, cálculo y derecho.">
@@ -31,10 +32,7 @@ import Base from '../layouts/Base.astro';
             <label for="materia">Materia de interés</label>
             <select id="materia" name="materia">
               <option value="">Elegí una opción…</option>
-              <option>Conceptos Contables</option>
-              <option>Contabilidad General I</option>
-              <option>Derecho y Actividad Empresarial I</option>
-              <option>Contabilidad General III</option>
+              {materias.map((m) => <option>{m.nombre}</option>)}
               <option>Otra / no sé todavía</option>
             </select>
           </div>

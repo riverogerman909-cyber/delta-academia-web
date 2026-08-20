@@ -31,7 +31,7 @@ export const materias = [
   },
   {
     slug: 'contabilidad-general-i',
-    nombre: 'Contabilidad General I',
+    nombre: 'Contabilidad General 1',
     codigo: 'C20',
     semestre: 'Segundo semestre',
     area: 'Contabilidad e Impuestos',
