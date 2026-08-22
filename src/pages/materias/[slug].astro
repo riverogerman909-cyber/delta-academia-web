@@ -85,6 +85,7 @@ const breadcrumbSchema = {
             <dt>Área</dt><dd>{materia.area}</dd>
             <dt>Previa</dt><dd>{materia.previa}</dd>
             {materia.docentes && <><dt>Docentes</dt><dd>{materia.docentes.join(' · ')}</dd></>}
+            {materia.horario && <><dt>Clases en vivo (Zoom)</dt><dd>{materia.horario}</dd></>}
           </dl>
           <div class="ficha-carreras">
             <span class="ficha-label">Obligatoria en</span>

@@ -32,6 +32,7 @@ import { materias } from '../../data/materias.js';
             <div class="materia-meta">
               <span>📐 {m.area}</span>
               {m.docentes && <span>👩‍🏫 {m.docentes.join(' · ')}</span>}
+              {m.horario && <span>🕐 {m.horario}</span>}
             </div>
             <div class="carreras carreras-card">
               {m.carreras.map((c) => <span class="chip-carrera">{c}</span>)}
