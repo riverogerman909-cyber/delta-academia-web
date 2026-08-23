@@ -1,0 +1,21 @@
+// Recursos gratuitos para estudiantes (simulacros, prácticos resueltos, guías).
+// Para agregar uno nuevo: sumá un objeto acá y subí el archivo a /public/recursos/.
+// `materia` debe coincidir con el slug de la materia en materias.js.
+
+export const recursos = [
+  {
+    slug: 'simulacro-conceptos-contables-u1-u3',
+    materia: 'conceptos-contables',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Unidades 1, 2 y 3',
+    descripcion:
+      '27 preguntas de exámenes y revisiones reales de la FCEA sobre las unidades 1 a 3, con respuesta y explicación. Ideal para preparar la primera revisión.',
+    fecha: '2026-08-23',
+    interactivo: '/recursos/simulacro-conceptos-contables-u1-u3/',
+    pdf: '/recursos/simulacro-conceptos-contables-u1-u3.pdf',
+  },
+];
+
+export function recursosDe(slugMateria) {
+  return recursos.filter((r) => r.materia === slugMateria);
+}

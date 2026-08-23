@@ -1,12 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { materias } from '../../data/materias.js';
+import { recursosDe } from '../../data/recursos.js';
 
 export function getStaticPaths() {
   return materias.map((m) => ({ params: { slug: m.slug }, props: { materia: m } }));
 }
 
 const { materia } = Astro.props;
+const recursos = recursosDe(materia.slug);
 
 const seoTitle = `Curso de ${materia.nombre} (${materia.codigo}) — FCEA | Delta Academia`;
 const seoDesc = `Curso online de ${materia.nombre} para estudiantes de FCEA (UdelaR): material grabado, clases semanales por Zoom y práctica tipo parcial. ${materia.resumen}`;
@@ -74,6 +76,28 @@ const breadcrumbSchema = {
             {materia.temario.map((t) => <li>{t}</li>)}
           </ol>
         </div>
+
+        {recursos.length > 0 && (
+          <div class="reveal" style="margin-top: var(--sp-6);">
+            <h2>Material gratuito</h2>
+            <p style="color: var(--texto-suave);">Practicá con preguntas de exámenes reales de la FCEA. Sin registro.</p>
+            <div class="recursos-lista">
+              {recursos.map((r) => (
+                <div class="recurso-item">
+                  <div>
+                    <span class="chip chip-ambar">{r.tipo}</span>
+                    <h3 style="margin: 8px 0 4px;">{r.titulo}</h3>
+                    <p style="margin: 0; color: var(--texto-suave); font-size: 0.95rem;">{r.descripcion}</p>
+                  </div>
+                  <div class="grupo-btn">
+                    {r.interactivo && <a href={r.interactivo} class="btn btn-primary">Resolver online</a>}
+                    {r.pdf && <a href={r.pdf} class="btn btn-secondary" download>PDF</a>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <aside class="col-lateral reveal">
@@ -123,6 +147,8 @@ const breadcrumbSchema = {
     display: flex; align-items: center; justify-content: center;
   }
 
+  .recursos-lista { display: flex; flex-direction: column; gap: var(--sp-2); }
+  .recurso-item { background: var(--azul-claro); border-radius: var(--radio-card); padding: var(--sp-3); display: flex; flex-direction: column; gap: var(--sp-2); }
   .ficha { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio-card); padding: var(--sp-3); box-shadow: var(--sombra-1); position: sticky; top: 90px; }
   .ficha h3 { margin-top: 0; }
   .ficha dl { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0 0 var(--sp-2); }

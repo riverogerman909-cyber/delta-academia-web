@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import { materias } from '../data/materias.js';
+import { recursos } from '../data/recursos.js';
+
+const porMateria = materias
+  .map((m) => ({ materia: m, items: recursos.filter((r) => r.materia === m.slug) }))
+  .filter((g) => g.items.length > 0);
+---
+
+<Base
+  title="Recursos gratuitos para estudiantes de FCEA | Delta Academia"
+  description="Simulacros interactivos y prácticos resueltos gratis para las materias de FCEA (UdelaR): preguntas de exámenes reales con explicación. Sin registro."
+>
+  <section class="encabezado-pagina">
+    <div class="contenedor reveal">
+      <span class="kicker">Recursos</span>
+      <h1>Material gratuito para practicar</h1>
+      <p class="medida">
+        Simulacros con preguntas de <span class="ambar">exámenes reales de la FCEA</span>, con
+        respuesta y explicación. Sin registro, sin vueltas: practicá y fijate dónde estás parado.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion" style="padding-top: var(--sp-6);">
+    <div class="contenedor">
+      {porMateria.map(({ materia, items }) => (
+        <div class="grupo reveal">
+          <div class="grupo-cab">
+            <h2>{materia.nombre}</h2>
+            <a href={`/materias/${materia.slug}`} class="btn btn-ghost">Ver la materia →</a>
+          </div>
+          <div class="grid">
+            {items.map((r) => (
+              <article class="card recurso">
+                <span class="chip chip-ambar">{r.tipo}</span>
+                <h3>{r.titulo}</h3>
+                <p>{r.descripcion}</p>
+                <div class="grupo-btn">
+                  {r.interactivo && <a href={r.interactivo} class="btn btn-primary">Resolver online</a>}
+                  {r.pdf && <a href={r.pdf} class="btn btn-secondary" download>Descargar PDF</a>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="card aviso reveal">
+        <h3>Vamos a ir sumando más</h3>
+        <p>
+          Simulacros y prácticos resueltos de las demás materias se publican acá a medida que
+          avanza el semestre. Seguinos en
+          <a href="https://instagram.com/delta.academiagr" target="_blank" rel="noopener">@delta.academiagr</a>
+          para enterarte cuando salga uno nuevo.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
+  .grupo { margin-bottom: var(--sp-8); }
+  .grupo-cab { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-2); flex-wrap: wrap; margin-bottom: var(--sp-2); }
+  .grupo-cab h2 { margin: 0; }
+  .recurso { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .recurso p { color: var(--texto-suave); font-size: 0.95rem; flex-grow: 1; margin: 0; }
+  .aviso { background: var(--azul-claro); border-color: transparent; }
+  .aviso p { margin: 0; color: var(--texto-suave); }
+</style>
