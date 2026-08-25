@@ -4,6 +4,17 @@
 
 export const recursos = [
   {
+    slug: 'simulacro-contabilidad-general-1-t1-2b',
+    materia: 'contabilidad-general-i',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Temas 1, 2A y 2B',
+    descripcion:
+      '23 preguntas sobre normas contables, efectivo y equivalentes y documentos a cobrar, con respuesta y explicación. Incluye preguntas de exámenes reales de la FCEA y un bloque de repaso de porcentajes de utilidad y registración. Ideal para preparar la primera revisión.',
+    fecha: '2026-08-25',
+    interactivo: '/recursos/simulacro-contabilidad-general-1-t1-2b/',
+    pdf: '/recursos/simulacro-contabilidad-general-1-t1-2b.pdf',
+  },
+  {
     slug: 'simulacro-conceptos-contables-u1-u3',
     materia: 'conceptos-contables',
     tipo: 'Simulacro',
