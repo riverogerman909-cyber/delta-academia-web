@@ -20,7 +20,7 @@ export const recursos = [
     tipo: 'Simulacro',
     titulo: 'Simulacro · Unidades 4 y 5',
     descripcion:
-      '26 preguntas de exámenes y revisiones reales de la FCEA sobre las unidades 4 y 5 —las cuentas y los registros contables—, con respuesta y explicación. Ideal para preparar la primera revisión.',
+      '25 preguntas de exámenes y revisiones reales de la FCEA sobre las unidades 4 y 5 —las cuentas y los registros contables—, con respuesta y explicación. Ideal para preparar la primera revisión.',
     fecha: '2026-09-02',
     interactivo: '/recursos/simulacro-conceptos-contables-u4-u5/',
     pdf: '/recursos/simulacro-conceptos-contables-u4-u5.pdf',
