@@ -15,6 +15,17 @@ export const recursos = [
     pdf: '/recursos/simulacro-contabilidad-general-1-t1-2b.pdf',
   },
   {
+    slug: 'simulacro-conceptos-contables-u4-u5',
+    materia: 'conceptos-contables',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Unidades 4 y 5',
+    descripcion:
+      '26 preguntas de exámenes y revisiones reales de la FCEA sobre las unidades 4 y 5 —las cuentas y los registros contables—, con respuesta y explicación. Ideal para preparar la primera revisión.',
+    fecha: '2026-09-02',
+    interactivo: '/recursos/simulacro-conceptos-contables-u4-u5/',
+    pdf: '/recursos/simulacro-conceptos-contables-u4-u5.pdf',
+  },
+  {
     slug: 'simulacro-conceptos-contables-u1-u3',
     materia: 'conceptos-contables',
     tipo: 'Simulacro',
