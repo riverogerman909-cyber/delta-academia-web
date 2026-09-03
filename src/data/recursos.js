@@ -9,7 +9,7 @@ export const recursos = [
     tipo: 'Simulacro',
     titulo: 'Simulacro · Temas 2C y 2D',
     descripcion:
-      '15 preguntas de exámenes reales de la FCEA sobre registros auxiliares y arqueo de valores, con los ejercicios resueltos paso a paso. Es justamente lo que evalúa la primera revisión del 14/10.',
+      '13 preguntas de exámenes reales de la FCEA sobre registros auxiliares y arqueo de valores, con los ejercicios resueltos paso a paso. Es justamente lo que evalúa la primera revisión del 14/10.',
     fecha: '2026-09-02',
     interactivo: '/recursos/simulacro-contabilidad-general-1-2c-2d/',
     pdf: '/recursos/simulacro-contabilidad-general-1-2c-2d.pdf',
