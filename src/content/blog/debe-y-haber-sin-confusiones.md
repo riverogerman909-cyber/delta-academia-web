@@ -1,6 +1,6 @@
 ---
-title: "Debe y Haber: una guía para dejar de confundirlos"
-description: "No, 'Debe' no significa que alguien te debe. Cómo funciona de verdad la convención más malentendida de la contabilidad."
+title: "Debe y Haber en contabilidad: qué significan y el truco para no confundirlos"
+description: "Debe no significa deber plata. Explicación simple de qué son el Debe y el Haber, la regla para saber en qué columna va cada cuenta y un ejemplo resuelto."
 date: 2026-08-14
 author: "Germán Rivero"
 tag: "Contabilidad"
