@@ -42,7 +42,7 @@ export const recursos = [
     tipo: 'Simulacro',
     titulo: 'Simulacro · Unidad 6',
     descripcion:
-      '30 preguntas de exámenes y revisiones reales de la FCEA sobre la unidad 6 —ciclo contable elemental, IVA y retribuciones al personal—, con respuesta y explicación. Ideal para preparar la primera revisión.',
+      '29 preguntas de exámenes y revisiones reales de la FCEA sobre la unidad 6 —ciclo contable elemental, IVA y retribuciones al personal—, con respuesta y explicación. Ideal para preparar la primera revisión.',
     fecha: '2026-09-12',
     interactivo: '/recursos/simulacro-conceptos-contables-u6/',
     pdf: '/recursos/simulacro-conceptos-contables-u6.pdf',
