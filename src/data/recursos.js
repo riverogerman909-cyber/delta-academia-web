@@ -4,6 +4,17 @@
 
 export const recursos = [
   {
+    slug: 'simulacro-contabilidad-general-1-2e',
+    materia: 'contabilidad-general-i',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Conciliación bancaria',
+    descripcion:
+      '11 preguntas de exámenes reales de la FCEA sobre conciliación bancaria, con los cuadros completos y la conciliación resuelta paso a paso. Junto con arqueo, es lo que evalúa la primera revisión del 14/10.',
+    fecha: '2026-09-12',
+    interactivo: '/recursos/simulacro-contabilidad-general-1-2e/',
+    pdf: '/recursos/simulacro-contabilidad-general-1-2e.pdf',
+  },
+  {
     slug: 'simulacro-contabilidad-general-1-2c-2d',
     materia: 'contabilidad-general-i',
     tipo: 'Simulacro',
