@@ -35,7 +35,7 @@ Los centros de estudiantes ([@ceceafeuu](https://www.instagram.com/ceceafeuu/) y
 
 **8. Un calendario digital** — Google Calendar alcanza y sobra: cargá clases, fechas de revisiones y bloques de estudio. Lo que no está agendado, no existe.
 
-## Y los nuestros 🙂
+## Y los nuestros
 
 **9. Los [Recursos de Delta](/recursos)** — simulacros con preguntas de exámenes reales de la FCEA, con respuesta y explicación, para resolver online o descargar en PDF. Gratis y sin registro.
 

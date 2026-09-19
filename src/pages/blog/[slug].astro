@@ -16,6 +16,26 @@ const fecha = post.data.date.toLocaleDateString('es-UY', {
   year: 'numeric',
 });
 
+// CTA del pie adaptado al tema del artículo
+const ctas = {
+  'Conceptos Contables': {
+    titulo: '¿Cursando una materia contable?',
+    texto: 'Preparamos Conceptos Contables y Contabilidad General 1 con material grabado, clases semanales por Zoom y práctica tipo parcial.',
+  },
+  'Contabilidad': {
+    titulo: '¿Cursando una materia contable?',
+    texto: 'Preparamos Conceptos Contables y Contabilidad General 1 con material grabado, clases semanales por Zoom y práctica tipo parcial.',
+  },
+  'Cálculo': {
+    titulo: '¿Cursando Cálculo?',
+    texto: 'Damos Cálculo 1A, Cálculo 1B y Cálculo 1 (MC10) con clases en vivo por Zoom y práctica guiada.',
+  },
+};
+const cta = ctas[post.data.tag] ?? {
+  titulo: '¿Necesitás una mano con alguna materia?',
+  texto: 'Material grabado, clases semanales por Zoom y práctica tipo parcial en las materias clave de FCEA.',
+};
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -61,8 +81,8 @@ const articleSchema = {
       </div>
 
       <aside class="post-cta reveal">
-        <h3>¿Cursando esta materia?</h3>
-        <p>Material grabado, clases semanales por Zoom y práctica tipo parcial.</p>
+        <h3>{cta.titulo}</h3>
+        <p>{cta.texto}</p>
         <div class="grupo-btn">
           <a href="/materias" class="btn btn-primary">Ver materias</a>
           <a href="/contacto" class="btn btn-secondary">Escribinos</a>

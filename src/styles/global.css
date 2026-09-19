@@ -167,3 +167,5 @@ img { max-width: 100%; display: block; }
   padding: 3px 10px; border-radius: 999px;
   background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-suave);
 }
+/* Resto de carreras colapsado ("+N más"); el detalle completo vive en la página de la materia */
+.chip-mas { color: var(--azul); font-weight: 700; border-style: dashed; }

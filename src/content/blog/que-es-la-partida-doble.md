@@ -41,7 +41,7 @@ Un ejemplo: la empresa compra mercadería por $30.000, paga $10.000 al contado y
 | Caja | | 10.000 |
 | Proveedores | | 20.000 |
 
-Debe: 30.000. Haber: 10.000 + 20.000 = 30.000. ✔ El asiento cierra — y fijate que un asiento puede tener **más de dos cuentas**: lo que debe igualarse es la suma, no la cantidad de líneas.
+Debe: 30.000. Haber: 10.000 + 20.000 = 30.000. ✓ El asiento cierra — y fijate que un asiento puede tener **más de dos cuentas**: lo que debe igualarse es la suma, no la cantidad de líneas.
 
 ## El superpoder: un sistema que se controla solo
 

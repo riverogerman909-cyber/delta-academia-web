@@ -30,12 +30,26 @@ import { materias } from '../../data/materias.js';
             <h3>{m.nombre}</h3>
             <p class="materia-resumen">{m.resumen}</p>
             <div class="materia-meta">
-              <span>📐 {m.area}</span>
-              {m.docentes && <span>👩‍🏫 {m.docentes.join(' · ')}</span>}
-              {m.horario && <span>🕐 {m.horario}</span>}
+              <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z" /><line x1="7" y1="7" x2="7.01" y2="7" /></svg>
+                {m.area}
+              </span>
+              {m.docentes && (
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                  {m.docentes.join(' · ')}
+                </span>
+              )}
+              {m.horario && (
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                  {m.horario}
+                </span>
+              )}
             </div>
             <div class="carreras carreras-card">
-              {m.carreras.map((c) => <span class="chip-carrera">{c}</span>)}
+              {m.carreras.slice(0, 3).map((c) => <span class="chip-carrera">{c}</span>)}
+              {m.carreras.length > 3 && <span class="chip-carrera chip-mas">+{m.carreras.length - 3} más</span>}
             </div>
             <span class="materia-mas">Ver detalle →</span>
           </a>
@@ -51,6 +65,8 @@ import { materias } from '../../data/materias.js';
   .materia-top { display: flex; gap: 8px; margin-bottom: var(--sp-2); flex-wrap: wrap; }
   .materia-resumen { color: var(--texto-suave); font-size: 0.95rem; flex-grow: 1; }
   .materia-meta { display: flex; flex-wrap: wrap; gap: var(--sp-2); font-size: 0.85rem; color: var(--texto-suave); margin: var(--sp-2) 0 10px; }
+  .materia-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .materia-meta svg { flex-shrink: 0; color: var(--azul); }
   .carreras-card { margin-bottom: var(--sp-2); }
   .materia-mas { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
   .materia-card:hover .materia-mas { color: var(--ambar); }

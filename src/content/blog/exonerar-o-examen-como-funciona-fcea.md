@@ -14,7 +14,7 @@ Si estás en tus primeros semestres, el sistema de aprobación de FCEA puede son
 
 **2. Examen.** Si no llegás a los mínimos (o elegís no cursar reglamentado), rendís un **examen** por el total de la materia, generalmente en los períodos de febrero, julio o diciembre. Se aprueba, como regla general, con el 50% del puntaje.
 
-⚠️ **Importante**: los puntajes, mínimos y modalidades **varían según la materia** — cada unidad curricular los define en su ficha oficial. En nuestras [páginas de materias](/materias) tenés el detalle de evaluación de cada una, actualizado con las fichas vigentes.
+**Importante**: los puntajes, mínimos y modalidades **varían según la materia** — cada unidad curricular los define en su ficha oficial. En nuestras [páginas de materias](/materias) tenés el detalle de evaluación de cada una, actualizado con las fichas vigentes.
 
 ## La estrategia: jugá a exonerar desde el día uno
 

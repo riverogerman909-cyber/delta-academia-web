@@ -39,10 +39,10 @@ import Base from '../layouts/Base.astro';
         <div class="card valores">
           <h3>Lo que nos importa</h3>
           <ul>
-            <li>✅ Claridad antes que cantidad</li>
-            <li>✅ Práctica real, tipo parcial</li>
-            <li>✅ Cercanía con el estudiante</li>
-            <li>✅ Material propio y actualizado</li>
+            <li>Claridad antes que cantidad</li>
+            <li>Práctica real, tipo parcial</li>
+            <li>Cercanía con el estudiante</li>
+            <li>Material propio y actualizado</li>
           </ul>
         </div>
       </aside>
@@ -54,7 +54,8 @@ import Base from '../layouts/Base.astro';
   .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
   .cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--sp-6); align-items: start; }
   .valores ul { list-style: none; padding: 0; margin: 0; }
-  .valores li { padding: 10px 0; border-bottom: 1px solid var(--borde); }
+  .valores li { padding: 10px 0 10px 26px; border-bottom: 1px solid var(--borde); position: relative; }
+  .valores li::before { content: '✓'; position: absolute; left: 0; color: var(--ambar); font-weight: 700; }
   .valores li:last-child { border-bottom: none; }
   @media (max-width: 780px) { .cols { grid-template-columns: 1fr; } }
 </style>

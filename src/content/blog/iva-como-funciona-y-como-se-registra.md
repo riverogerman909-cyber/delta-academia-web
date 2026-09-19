@@ -45,8 +45,8 @@ Fijate que en los dos asientos [el Debe iguala al Haber](/blog/debe-y-haber-sin-
 
 Si la letra te da un importe **con IVA incluido** — por ejemplo, una boleta de $ 12.200 con tasa del 22 % — el reflejo de multiplicar por 0,22 está mal:
 
-- ❌ $ 12.200 × 0,22 = $ 2.684 → **incorrecto**: estás calculando el 22 % del total, y el IVA es el 22 % del importe *sin* impuesto.
-- ✅ $ 12.200 ÷ 1,22 = $ 10.000 → ese es el importe sin IVA, y el IVA es la diferencia: $ 2.200.
+- ✗ $ 12.200 × 0,22 = $ 2.684 → **incorrecto**: estás calculando el 22 % del total, y el IVA es el 22 % del importe *sin* impuesto.
+- ✓ $ 12.200 ÷ 1,22 = $ 10.000 → ese es el importe sin IVA, y el IVA es la diferencia: $ 2.200.
 
 La regla para acordarte: si el precio sin IVA es una "torta" de 100 %, el total con IVA es una torta de 122 %. Para volver de 122 a 100, **dividís entre 1,22** (con tasa mínima, entre 1,10). Verificación rápida: el IVA que obtuviste, sumado al importe sin impuesto, tiene que dar exactamente el total.
 

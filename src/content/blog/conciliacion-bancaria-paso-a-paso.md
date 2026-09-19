@@ -37,7 +37,7 @@ Saldo según libros: **$120.000**. Saldo según el banco: **$131.500**. Encontr�
 
 **Primero, ajustá tus libros** (solo las notas): 120.000 − 500 + 3.000 = **$122.500** (saldo contable ajustado). Eso implica dos asientos: el gasto por comisiones y la cobranza.
 
-**Después, verificá contra el banco**: 131.500 − 15.000 (cheques que van a salir) + 6.000 (depósito que va a entrar) = **$122.500**. ✔ Concilia.
+**Después, verificá contra el banco**: 131.500 − 15.000 (cheques que van a salir) + 6.000 (depósito que va a entrar) = **$122.500**. ✓ Concilia.
 
 Si después de computar todas las partidas los saldos siguen sin coincidir, hay un **error** — y encontrarlo es parte del trabajo (revisá importes transpuestos y partidas duplicadas).
 

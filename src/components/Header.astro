@@ -40,7 +40,10 @@ const links = [
 
   <nav class="nav-mobile" aria-label="Menú móvil">
     {links.map((l) => <a href={l.href}>{l.texto}</a>)}
-    <a href="https://instagram.com/delta.academiagr" target="_blank" rel="noopener">📷 @delta.academiagr</a>
+    <a href="https://instagram.com/delta.academiagr" target="_blank" rel="noopener" class="ig-movil">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+      @delta.academiagr
+    </a>
     <a href="/contacto" class="btn btn-primary">Contacto</a>
   </nav>
 </header>
@@ -83,6 +86,7 @@ const links = [
   .nav-mobile { display: none; flex-direction: column; padding: var(--sp-2) var(--sp-3) var(--sp-3); gap: var(--sp-2); background: var(--fondo); }
   .nav-mobile a { font-weight: 500; padding: 6px 0; }
   .nav-mobile .btn { justify-content: center; }
+  .ig-movil { display: inline-flex; align-items: center; gap: 8px; color: var(--azul); }
 
   @media (max-width: 860px) {
     .nav-desktop { display: none; }
