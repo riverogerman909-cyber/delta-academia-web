@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Página no encontrada — Delta Academia" description="La página que buscás no existe o cambió de lugar. Volvé al inicio o mirá nuestras materias y recursos gratuitos.">
+  <section class="seccion">
+    <div class="contenedor texto-centro">
+      <p class="delta" aria-hidden="true">Δ</p>
+      <h1>Esta página no existe</h1>
+      <p class="medida centro" style="color: var(--texto-suave);">
+        Puede que el enlace esté mal escrito o que la página haya cambiado de lugar.
+        Nada grave: todo lo importante sigue acá.
+      </p>
+      <div class="grupo-btn centro mt-3">
+        <a href="/" class="btn btn-primary">Ir al inicio</a>
+        <a href="/materias" class="btn btn-secondary">Ver materias</a>
+        <a href="/recursos" class="btn btn-secondary">Material gratuito</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .seccion { min-height: 55vh; display: flex; align-items: center; }
+  .delta {
+    font-family: var(--fuente-titulo);
+    font-size: 5rem;
+    color: var(--ambar);
+    line-height: 1;
+    margin: 0 0 var(--sp-2);
+  }
+</style>

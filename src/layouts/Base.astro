@@ -76,20 +76,43 @@ const schemas = [orgSchema, ...schema];
     </main>
     <Footer />
 
+    <noscript>
+      <style>
+        .reveal { opacity: 1; transform: none; }
+      </style>
+    </noscript>
     <script>
-      // Animaciones suaves al hacer scroll (fade + slide)
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      // Animaciones suaves al hacer scroll (fade + slide).
+      // Chequeo directo de posición en vez de IntersectionObserver: un scroll
+      // rápido puede atravesar el viewport entre dos avisos del observer y
+      // dejar secciones invisibles; esto también revela lo ya scrolleado.
+      const pendientes = new Set(document.querySelectorAll('.reveal'));
+      function revelar() {
+        const limite = window.innerHeight * 0.92;
+        for (const el of pendientes) {
+          const r = el.getBoundingClientRect();
+          if (r.top < limite || r.bottom < 0) {
+            el.classList.add('visible');
+            pendientes.delete(el);
+          }
+        }
+        if (!pendientes.size) {
+          window.removeEventListener('scroll', alMover);
+          window.removeEventListener('resize', alMover);
+        }
+      }
+      let pedido = false;
+      function alMover() {
+        if (pedido) return;
+        pedido = true;
+        requestAnimationFrame(() => {
+          pedido = false;
+          revelar();
+        });
+      }
+      window.addEventListener('scroll', alMover, { passive: true });
+      window.addEventListener('resize', alMover, { passive: true });
+      revelar();
     </script>
   </body>
 </html>

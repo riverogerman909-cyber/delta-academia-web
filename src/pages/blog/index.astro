@@ -47,8 +47,8 @@ const fecha = (d) =>
   .encabezado-pagina { padding: var(--sp-8) 0 var(--sp-2); background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); }
   .post { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; text-decoration: none; }
   .post-desc { color: var(--texto-suave); font-size: 0.95rem; flex-grow: 1; margin: 0; }
-  .post-meta { display: flex; gap: 8px; font-size: 0.83rem; color: var(--texto-suave); }
-  .post-autor { font-weight: 700; color: var(--azul); }
+  .post-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; font-size: 0.83rem; color: var(--texto-suave); }
+  .post-autor { font-weight: 700; color: var(--azul); white-space: nowrap; }
   .post-mas { color: var(--azul); font-weight: 700; font-size: 0.9rem; }
   .post:hover .post-mas { color: var(--ambar); }
 </style>
