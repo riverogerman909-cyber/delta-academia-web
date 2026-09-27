@@ -102,6 +102,8 @@ import { materias } from '../data/materias.js';
           `Mensaje: ${mensaje}\n` +
           `Mi email: ${email}`;
         const url = `https://wa.me/59898521288?text=${encodeURIComponent(texto)}`;
+        const gtag = (window as any).gtag;
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'formulario' });
         window.open(url, '_blank');
         exito.hidden = false;
         form.reset();

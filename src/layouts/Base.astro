@@ -34,6 +34,14 @@ const schemas = [orgSchema, ...schema];
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KPQQ4MSCPC"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KPQQ4MSCPC');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -81,6 +89,13 @@ const schemas = [orgSchema, ...schema];
         .reveal { opacity: 1; transform: none; }
       </style>
     </noscript>
+    <script is:inline>
+      // Cada clic a WhatsApp cuenta como contacto en Analytics (evento generate_lead).
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+        if (a && typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'whatsapp' });
+      });
+    </script>
     <script>
       // Animaciones suaves al hacer scroll (fade + slide).
       // Chequeo directo de posición en vez de IntersectionObserver: un scroll
