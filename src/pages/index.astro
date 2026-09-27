@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import Novedades from '../components/Novedades.astro';
 import { materias } from '../data/materias.js';
+import { novedades } from '../data/novedades.js';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
@@ -45,13 +47,42 @@ const testimonios = [
   { t: 'Sos un crá: siempre sacándonos cualquier duda y haciéndonos todo más fácil de entender y de aprender.', m: 'Conceptos Contables' },
   { t: 'Me re gustó la cantidad de materiales y la disponibilidad que había para hacer consultas. Eso me re ayudó.', m: 'Conceptos Contables' },
 ];
+
+// Próxima clase abierta: aviso en el hero y datos estructurados de evento para Google
+const proxima = novedades.find((n) => n.tipo === 'clase' && Date.now() <= Date.parse(n.fin));
+const eventoSchema = proxima && {
+  '@context': 'https://schema.org',
+  '@type': 'EducationEvent',
+  name: `${proxima.titulo} — Delta Academia`,
+  description: `${proxima.sesiones.map((x) => `${x.materia} ${x.hora}`).join(' · ')}. ${proxima.descripcion}`,
+  startDate: proxima.inicio,
+  endDate: proxima.fin,
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
+  location: { '@type': 'VirtualLocation', url: 'https://deltaacademiagr.com/#novedades' },
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: 0, priceCurrency: 'UYU', availability: 'https://schema.org/InStock', url: 'https://deltaacademiagr.com/#novedades' },
+  organizer: { '@type': 'EducationalOrganization', name: 'Delta Academia', url: 'https://deltaacademiagr.com' },
+  performer: { '@type': 'Person', name: proxima.docente },
+};
+const avisoFecha = proxima && (() => {
+  const d = new Date(Date.parse(proxima.inicio) - 3 * 3600 * 1000);
+  return `${['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'][d.getUTCDay()]} ${d.getUTCDate()}/${d.getUTCMonth() + 1}`;
+})();
 ---
 
-<Base schema={[faqSchema]}>
+<Base schema={eventoSchema ? [faqSchema, eventoSchema] : [faqSchema]}>
   <!-- HERO -->
   <section class="hero">
     <div class="contenedor hero-inner">
       <div class="hero-texto reveal">
+        {proxima && (
+          <a href="#novedades" class="aviso-hero" data-fin={proxima.fin}>
+            <span class="aviso-punto" aria-hidden="true"></span>
+            <span><strong>{avisoFecha}:</strong> {proxima.aviso}</span>
+            <span class="aviso-flecha" aria-hidden="true">→</span>
+          </a>
+        )}
         <span class="kicker kicker-desktop">Delta Academia · Cursos de FCEA — UdelaR</span>
         <span class="kicker kicker-movil">Cursos de FCEA — UdelaR</span>
         <h1>Entendé la contabilidad. <span class="ambar">Aprobá con confianza.</span></h1>
@@ -85,6 +116,9 @@ const testimonios = [
       </div>
     </div>
   </section>
+
+  <!-- NOVEDADES -->
+  <Novedades />
 
   <!-- MATERIAS -->
   <section class="seccion" id="materias">
@@ -236,6 +270,13 @@ const testimonios = [
   </section>
 </Base>
 
+<script>
+  // El aviso del hero desaparece solo cuando termina la clase, aunque el sitio no se haya republicado.
+  document.querySelectorAll('.aviso-hero[data-fin]').forEach((a) => {
+    if (Date.now() > Date.parse(a.dataset.fin)) a.remove();
+  });
+</script>
+
 <style>
   .hero { padding: var(--sp-12) 0; background: linear-gradient(180deg, var(--azul-claro) 0%, var(--fondo) 100%); position: relative; overflow: hidden; }
   .hero::after {
@@ -253,6 +294,19 @@ const testimonios = [
   }
   .hero-chips svg { flex-shrink: 0; color: var(--ambar); }
   .kicker-movil { display: none; }
+  .aviso-hero {
+    display: inline-flex; align-items: center; gap: 10px; max-width: 100%;
+    margin-bottom: var(--sp-2); padding: 7px 14px 7px 12px; border-radius: 999px;
+    background: var(--blanco); border: 1px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.15);
+    font-size: 0.86rem; color: var(--texto); transition: all var(--trans);
+  }
+  .aviso-hero strong { color: var(--azul); }
+  .aviso-hero:hover { border-color: var(--ambar); color: var(--texto); transform: translateY(-1px); }
+  .aviso-punto { width: 8px; height: 8px; border-radius: 50%; background: var(--ambar); flex-shrink: 0; animation: pulso-aviso 1.8s infinite; }
+  .aviso-flecha { color: var(--ambar); font-weight: 700; }
+  @keyframes pulso-aviso { 0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); } 70% { box-shadow: 0 0 0 7px rgba(245, 158, 11, 0); } 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); } }
+  @media (prefers-reduced-motion: reduce) { .aviso-punto { animation: none; } }
 
   .quote { position: relative; padding-top: var(--sp-4); }
   .quote-mark { position: absolute; top: 6px; left: 18px; font-family: var(--fuente-titulo); font-size: 3.6rem; color: var(--ambar); line-height: 1; }
