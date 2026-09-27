@@ -56,30 +56,6 @@ export const materias = [
       '2 pruebas presenciales (36 y 64 puntos, con mínimos de 15 y 32). Exonera con 50 puntos en total. Hay además una modalidad presencial con seguimiento docente, con controles de lectura y actuación en clase.',
   },
   {
-    slug: 'derecho-actividad-empresarial-i',
-    nombre: 'Derecho y Actividad Empresarial I',
-    codigo: 'J23',
-    semestre: 'Segundo semestre',
-    area: 'Jurídica',
-    carreras: ['Cr. Público'],
-    previa: 'No requiere previas',
-    docentes: ['Cr. Ec. Germán Rivero'],
-    resumen:
-      'Los cimientos jurídicos del contador: Derecho Privado, Comercial y Societario aplicados a la actividad empresarial.',
-    objetivo:
-      'Brindar los aspectos introductorios del área jurídica, con énfasis en los conceptos de Derecho Comercial y Societario necesarios para la actuación profesional del contador público.',
-    temario: [
-      'Introducción al Derecho Privado: principios e instituciones',
-      'Concepto de empresario y empresario societario. Tipología social',
-      'Bienes con regulación especial: establecimiento comercial y propiedad industrial',
-      'El empresario en su actuación externa: competencia, consumidor y contratos comerciales',
-      'Títulos valores',
-      'Crisis empresariales y principios de derecho concursal',
-    ],
-    evaluacion:
-      '2 revisiones múltiple opción (una virtual, una presencial). Exonera con 50 puntos en total.',
-  },
-  {
     slug: 'legislacion-laboral-seguridad-social',
     nombre: 'Legislación Laboral y Seguridad Social',
     codigo: 'C41',

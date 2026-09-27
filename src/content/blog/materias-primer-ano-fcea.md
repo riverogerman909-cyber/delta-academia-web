@@ -36,7 +36,7 @@ La continuación natural de Conceptos (que es su **previa**): efectivo, crédito
 
 ### Derecho y Actividad Empresarial I (J23)
 
-Los cimientos jurídicos del contador: Derecho Privado, Comercial y Societario aplicados a la empresa. **Su desafío**: vocabulario nuevo y mucha precisión conceptual. **Consejo**: armá tu propio glosario desde la primera semana. [También la preparamos](/materias/derecho-actividad-empresarial-i).
+Los cimientos jurídicos del contador: Derecho Privado, Comercial y Societario aplicados a la empresa. **Su desafío**: vocabulario nuevo y mucha precisión conceptual. **Consejo**: armá tu propio glosario desde la primera semana.
 
 ### Introducción a la Macroeconomía (E34N)
 
