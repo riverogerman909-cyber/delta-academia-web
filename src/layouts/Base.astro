@@ -92,8 +92,8 @@ const schemas = [orgSchema, ...schema];
     <script is:inline>
       // Cada clic a WhatsApp cuenta como contacto en Analytics (evento generate_lead).
       document.addEventListener('click', function (e) {
-        var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
-        if (a && typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'whatsapp' });
+        var a = e.target.closest && e.target.closest('a[href*="wa.me/"], a[href*="chat.whatsapp.com/"]');
+        if (a && typeof gtag === 'function') gtag('event', 'generate_lead', { method: a.href.indexOf('chat.whatsapp.com') > -1 ? 'grupo_whatsapp' : 'whatsapp' });
       });
     </script>
     <script>

@@ -3,9 +3,9 @@
 // de fin, la tarjeta y el aviso del hero pasan solos a "Ya se dio".
 // tipo 'grabacion': clase ya dada. `video` admite { youtube: 'ID' } o { drive: 'ID' } (el archivo de
 // Drive tiene que estar compartido como "cualquier persona con el enlace"). Sin video, la tarjeta
-// ofrece pedir la grabación por WhatsApp.
+// lleva al grupo general de WhatsApp, donde quedan las grabaciones.
 
-export const WHATSAPP = '59898521288';
+export const GRUPO_WHATSAPP = 'https://chat.whatsapp.com/CQq2ztEqtA9Jv3HL4AnpcV';
 
 export const novedades = [
   {
@@ -16,14 +16,12 @@ export const novedades = [
     inicio: '2026-10-03T15:00:00-03:00',
     fin: '2026-10-03T20:30:00-03:00',
     docente: 'Lic. Belén Retamosa',
-    descripcion: 'Ejercicios tipo revisión resueltos paso a paso, por Zoom. Gratis y abiertas: no hace falta ser alumno de Delta.',
+    descripcion: 'Ejercicios tipo revisión resueltos paso a paso, por Zoom. Gratis y abiertas: no hace falta ser alumno de Delta. El link lo pasamos por el grupo general de WhatsApp.',
     sesiones: [
       { hora: '15:00', materia: 'Cálculo 1A', slug: 'calculo-1a' },
       { hora: '17:00', materia: 'Cálculo 1B', slug: 'calculo-1b' },
       { hora: '19:00', materia: 'Cálculo 1', slug: 'calculo-1' },
     ],
-    mensaje: '¡Hola! Quiero el link de la clase abierta de Cálculo del sábado 3/10.',
-    mensajePasada: '¡Hola! Quiero la grabación de la clase abierta de Cálculo del sábado 3/10.',
   },
   {
     tipo: 'grabacion',

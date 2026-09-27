@@ -1,8 +1,7 @@
 ---
-import { novedades, WHATSAPP } from '../data/novedades.js';
+import { novedades, GRUPO_WHATSAPP } from '../data/novedades.js';
 import { recursos } from '../data/recursos.js';
 
-const wa = (texto) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 const ahora = Date.now();
 
 const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
@@ -27,8 +26,6 @@ const tarjetas = novedades.map((n) => {
       diaNum: p.dia,
       mesCorto: MESES_CORTOS[p.mes - 1],
       fechaLarga: `${DIAS[p.semana]} ${p.dia}/${p.mes}`,
-      href: wa(pasada ? n.mensajePasada : n.mensaje),
-      hrefPasada: wa(n.mensajePasada),
     };
   }
   const p = partes(n.fecha);
@@ -41,7 +38,6 @@ const tarjetas = novedades.map((n) => {
       : n.video?.drive
         ? `https://drive.google.com/file/d/${n.video.drive}/preview`
         : null,
-    href: wa(`¡Hola! Quiero la grabación de la clase abierta de ${n.materia} del ${etiqueta}.`),
   };
 });
 if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
@@ -69,7 +65,7 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
     <div class="nov-track" tabindex="0" aria-label="Deslizá para ver más novedades">
       {tarjetas.map((t, i) => (
         <article class={`nov-card nov-${t.tipo}`} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${tarjetas.length}`}
-          data-fin={t.tipo === 'clase' ? t.fin : undefined} data-href-pasada={t.tipo === 'clase' ? t.hrefPasada : undefined}>
+          data-fin={t.tipo === 'clase' ? t.fin : undefined}>
 
           {t.tipo === 'clase' && (
             <div class="clase-inner">
@@ -92,9 +88,9 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                 Con la {t.docente}
               </p>
-              <a class="btn btn-ambar clase-cta" href={t.href} target="_blank" rel="noopener" data-cta>
+              <a class="btn btn-ambar clase-cta" href={GRUPO_WHATSAPP} target="_blank" rel="noopener" data-cta>
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
-                <span data-cta-texto>{t.pasada ? 'Pedí la grabación' : 'Quiero el link'}</span>
+                <span data-cta-texto>{t.pasada ? 'Ver la grabación en el grupo' : 'Sumate al grupo de WhatsApp'}</span>
               </a>
             </div>
           )}
@@ -109,7 +105,7 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
                   <span class="poster-meta">Clase abierta · {t.etiqueta} · {t.hora}</span>
                 </button>
               ) : (
-                <a class="poster" href={t.href} target="_blank" rel="noopener" aria-label={`Pedir la grabación de ${t.materia} por WhatsApp`}>
+                <a class="poster" href={GRUPO_WHATSAPP} target="_blank" rel="noopener" aria-label={`Ver la grabación de ${t.materia} en el grupo de WhatsApp`}>
                   <span class="chip-poster">Grabación</span>
                   <span class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z" /></svg></span>
                   <span class="poster-titulo">{t.materia}</span>
@@ -122,13 +118,13 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
                 <ul class="card-lista">
                   <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>La clase completa, grabada</li>
                   <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>Para cualquier estudiante de FCEA</li>
-                  <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>Gratis, te la pasamos por WhatsApp</li>
+                  <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>Está en el grupo general de WhatsApp</li>
                 </ul>
                 <div class="card-acciones">
                   {t.embed ? (
                     <button class="btn btn-primary btn-chico" data-embed={t.embed} data-titulo={`Clase abierta de ${t.materia}`}>Ver la clase</button>
                   ) : (
-                    <a class="btn btn-primary btn-chico" href={t.href} target="_blank" rel="noopener">Pedí la grabación</a>
+                    <a class="btn btn-primary btn-chico" href={GRUPO_WHATSAPP} target="_blank" rel="noopener">Ver en el grupo</a>
                   )}
                   <a class="link-materia" href={`/materias/${t.slug}`}>Ver el curso →</a>
                 </div>
@@ -321,6 +317,7 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
     background: #cbd5e1; transition: width var(--trans), background var(--trans);
   }
   .nov-dot[aria-selected='true'] { width: 28px; background: var(--ambar); }
+  .nov-dot[hidden] { display: none; }
 
   /* ---------- Modal de video ---------- */
   .nov-modal { border: none; padding: 0; background: transparent; width: min(960px, 94vw); max-width: none; }
@@ -361,29 +358,29 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
       card.querySelector('[data-badge]')?.classList.add('pasada');
       const badge = card.querySelector('[data-badge-texto]');
       if (badge) badge.textContent = 'Ya se dio';
-      const cta = card.querySelector('[data-cta]');
-      if (cta && card.dataset.hrefPasada) cta.setAttribute('href', card.dataset.hrefPasada);
       const txt = card.querySelector('[data-cta-texto]');
-      if (txt) txt.textContent = 'Pedí la grabación';
+      if (txt) txt.textContent = 'Ver la grabación en el grupo';
     });
 
     const paso = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth);
     const indice = () => Math.round(track.scrollLeft / paso());
     const irA = (i) => track.scrollTo({ left: Math.max(0, Math.min(i, cards.length - 1)) * paso(), behavior: reducir ? 'auto' : 'smooth' });
 
+    // Un punto por posición posible: con 3 tarjetas visibles y 5 en total hay 3 posiciones, no 5.
+    const visibles = () => Math.max(1, Math.round((track.clientWidth + 1) / paso()));
+    const posiciones = () => Math.max(1, cards.length - visibles() + 1);
     function actualizar() {
-      const i = indice();
-      dots.forEach((d, k) => d.setAttribute('aria-selected', String(k === i)));
+      const n = posiciones();
       const alFinal = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      const i = alFinal ? n - 1 : Math.min(indice(), n - 1);
+      dots.forEach((d, k) => {
+        d.hidden = k >= n;
+        d.setAttribute('aria-selected', String(k === i));
+      });
       flechas[0].disabled = track.scrollLeft <= 4;
       flechas[1].disabled = alFinal;
     }
-    let pedido = false;
-    track.addEventListener('scroll', () => {
-      if (pedido) return;
-      pedido = true;
-      requestAnimationFrame(() => { pedido = false; actualizar(); });
-    }, { passive: true });
+    track.addEventListener('scroll', actualizar, { passive: true });
     window.addEventListener('resize', actualizar, { passive: true });
 
     flechas.forEach((b) => b.addEventListener('click', () => { detener(); irA(indice() + Number(b.dataset.dir)); }));
