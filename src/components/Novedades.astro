@@ -40,7 +40,8 @@ const tarjetas = novedades.map((n) => {
         : null,
   };
 });
-if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
+if (ultimoRecurso) tarjetas.push({ ...ultimoRecurso, tipo: 'recurso' });
+const hayProxima = tarjetas.some((t) => t.tipo === 'clase' && !t.pasada);
 
 ---
 
@@ -50,7 +51,9 @@ if (ultimoRecurso) tarjetas.push({ tipo: 'recurso', ...ultimoRecurso });
       <div>
         <span class="kicker">Novedades</span>
         <h2>Clases abiertas y gratuitas</h2>
-        <p class="nov-sub">Conectate a las próximas y recuperá las que ya dimos.</p>
+        <p class="nov-sub">{hayProxima
+          ? 'Conectate a las próximas y recuperá las que ya dimos.'
+          : 'Recuperá las que ya dimos: las grabaciones están en el grupo general de WhatsApp.'}</p>
       </div>
       <div class="nov-controles" aria-hidden="false">
         <button class="nov-flecha" data-dir="-1" aria-label="Novedad anterior">
