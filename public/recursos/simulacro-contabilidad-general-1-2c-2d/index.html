@@ -154,6 +154,8 @@ let answered = {}, filter = "all";
 const esc = s => { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
 
 function explHtml(q){
+  // Hay simulacros con la explicación en bloques (expl) y otros con texto corrido (explanation).
+  if(!Array.isArray(q.expl)) return String(q.explanation || '').split(/\n\s*\n/).filter(p => p.trim()).map(p => `<p>${esc(p.trim())}</p>`).join('');
   return q.expl.map(b => b.tipo === 'asiento'
     ? `<div class="asiento" tabindex="0" role="group" aria-label="Asiento contable">${esc(b.texto)}</div>`
     : `<p>${esc(b.texto)}</p>`).join('');
