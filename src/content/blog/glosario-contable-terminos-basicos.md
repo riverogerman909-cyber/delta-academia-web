@@ -42,7 +42,7 @@ La contabilidad tiene su propio idioma, y buena parte de las trabas de primer a�
 
 **Libro mayor.** El mismo contenido pero reordenado por cuenta: todos los movimientos de Caja juntos, todos los de Ventas juntos, y así. Del mayor salen los saldos.
 
-**Balancete de saldos (o balance de comprobación).** La lista de todas las cuentas con sus saldos. Sirve de control: la suma de los saldos deudores tiene que igualar la de los acreedores.
+**Balancete de saldos (o balance de comprobación).** La lista de todas las cuentas con sus saldos. Sirve de control: la suma de los saldos deudores tiene que igualar la de los acreedores. Lo armamos paso a paso, desde el Diario y con un ejemplo completo, en [Libro Diario y libro Mayor](/blog/libro-diario-libro-mayor-balance-de-comprobacion).
 
 **Arqueo de valores.** El recuento físico de lo que hay en la caja, para compararlo con el saldo contable y detectar diferencias. Tenés el procedimiento completo en [Arqueo de valores paso a paso](/blog/arqueo-de-valores-paso-a-paso).
 
@@ -68,7 +68,7 @@ La contabilidad tiene su propio idioma, y buena parte de las trabas de primer a�
 
 **Proveedores (acreedores).** Lo que la empresa debe por compras a crédito. Pasivo.
 
-**Documentos a cobrar / a pagar.** Igual que los anteriores, pero con la deuda documentada con una firma (un vale, un conforme). A cobrar es activo; a pagar, pasivo.
+**Documentos a cobrar / a pagar.** Igual que los anteriores, pero con la deuda documentada con una firma (un vale, un conforme). A cobrar es activo; a pagar, pasivo. Antes de vencer, un documento a cobrar se puede endosar o descontar: lo explicamos en [endoso y descuento de documentos](/blog/endoso-y-descuento-de-documentos).
 
 **IVA Compras / IVA Ventas.** El impuesto pagado en las compras (un crédito ante el fisco: activo) y el cobrado en las ventas (una deuda con el fisco: pasivo). El detalle completo está en [El IVA explicado para estudiantes](/blog/iva-como-funciona-y-como-se-registra).
 

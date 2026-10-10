@@ -89,7 +89,7 @@ Una aplicación económica: si producir x unidades cuesta C(x) = 50.000 + 200x (
 
 ## Para cerrar
 
-Los límites no son un tema suelto: son la base de la continuidad y de la derivada, que se define justamente como un límite. En [Cálculo 1A](/materias/calculo-1a) llegan después de funciones, así que conviene dejarlos firmes antes de avanzar. Y si te preguntás adónde lleva todo esto, la continuación natural es [para qué sirven las derivadas en Economía](/blog/para-que-sirven-las-derivadas-economia).
+Los límites no son un tema suelto: son la base de la continuidad y de la derivada, que se define justamente como un límite. En [Cálculo 1A](/materias/calculo-1a) llegan después de funciones, así que conviene dejarlos firmes antes de avanzar. Y si te preguntás adónde lleva todo esto, la continuación natural es [para qué sirven las derivadas en Economía](/blog/para-que-sirven-las-derivadas-economia) y, después, [las reglas de derivación con ejemplos resueltos](/blog/reglas-de-derivacion-con-ejemplos).
 
 ---
 

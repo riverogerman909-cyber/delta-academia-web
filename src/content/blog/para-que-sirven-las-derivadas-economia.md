@@ -46,7 +46,7 @@ Supongamos que el beneficio de producir x unidades es B(x) = −x² + 100x (sube
 
 ## Cómo encarar el curso con esto en mente
 
-1. **Primero la intuición, después la técnica.** Las reglas de derivación se aprenden practicando, pero rinden el doble cuando sabés *qué* estás calculando: una velocidad de cambio, una pendiente.
+1. **Primero la intuición, después la técnica.** Las [reglas de derivación](/blog/reglas-de-derivacion-con-ejemplos) se aprenden practicando, pero rinden el doble cuando sabés *qué* estás calculando: una velocidad de cambio, una pendiente.
 2. **Traducí los enunciados a economía.** Cada vez que veas "derivada", pensá "marginal". Cada "hallar el máximo", pensá "qué le conviene a la empresa". El curso se vuelve mucho menos abstracto.
 3. **No te saltes límites.** Es la base sobre la que se define todo lo demás; los agujeros ahí se pagan después.
 

@@ -17,7 +17,7 @@ Dos motivos: **tiempo** (vos registrás cosas que el banco todavía no procesó,
 1. **Cheques emitidos no cobrados**: vos ya los registraste como salida, pero el beneficiario aún no los presentó al banco. *El banco todavía no los ve.*
 2. **Depósitos en tránsito**: vos ya los registraste como entrada, pero el banco los acreditó después del cierre. *El banco todavía no los ve.*
 3. **Notas de débito bancarias**: comisiones, gastos, impuestos que el banco descontó y vos aún no registraste. *Vos todavía no las viste.*
-4. **Notas de crédito bancarias**: acreditaciones (una cobranza, intereses ganados) que el banco hizo y vos aún no registraste. *Vos todavía no las viste.*
+4. **Notas de crédito bancarias**: acreditaciones (una cobranza, intereses ganados, el líquido de un [descuento de documentos](/blog/endoso-y-descuento-de-documentos)) que el banco hizo y vos aún no registraste. *Vos todavía no las viste.*
 
 ## La regla de oro: ¿qué genera asiento?
 

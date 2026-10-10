@@ -30,6 +30,10 @@ const ctas = {
     titulo: '¿Cursando Cálculo?',
     texto: 'Damos Cálculo 1A, Cálculo 1B y Cálculo 1 (MC10) con clases en vivo por Zoom y práctica guiada.',
   },
+  'Legislación Laboral': {
+    titulo: '¿Cursando una materia laboral?',
+    texto: 'Preparamos Legislación Laboral y Seguridad Social y Administración de las Relaciones del Trabajo con material grabado, clases semanales por Zoom y casos prácticos.',
+  },
 };
 const cta = ctas[post.data.tag] ?? {
   titulo: '¿Necesitás una mano con alguna materia?',
@@ -115,6 +119,11 @@ const articleSchema = {
   .prosa :global(table) { border-collapse: collapse; width: 100%; margin: var(--sp-3) 0; }
   .prosa :global(th), .prosa :global(td) { border: 1px solid var(--borde); padding: 10px 14px; text-align: left; font-size: 0.95rem; }
   .prosa :global(th) { background: var(--azul-claro); color: var(--azul); }
+  .prosa :global(.tabla-scroll) { overflow-x: auto; margin: var(--sp-3) 0; }
+  .prosa :global(.tabla-scroll table) { margin: 0; }
+  @media (max-width: 640px) {
+    .prosa :global(th), .prosa :global(td) { padding: 8px 10px; font-size: 0.9rem; }
+  }
   .prosa :global(hr) { border: none; border-top: 1px solid var(--borde); margin: var(--sp-4) 0; }
   .prosa :global(em) { color: inherit; }
 

@@ -108,7 +108,7 @@ La pérdida y los aportes no cambian, porque se calculan sobre el nominal; el as
 3. Los aportes patronales sí son una **pérdida adicional**, y a la vez un pasivo con el BPS.
 4. El sueldo se registra cuando se **devenga**; los pagos posteriores solo cancelan pasivos.
 
-Si en algún paso te costó distinguir activo, pasivo y pérdida, conviene afianzar [la ecuación contable](/blog/ecuacion-contable-fundamental) antes de seguir: el asiento de sueldos usa las tres cosas a la vez.
+Si en algún paso te costó distinguir activo, pasivo y pérdida, conviene afianzar [la ecuación contable](/blog/ecuacion-contable-fundamental) antes de seguir: el asiento de sueldos usa las tres cosas a la vez. Y si querés ver el otro lado, el jurídico, las reglas que hay detrás de cada liquidación se estudian en Legislación Laboral y Seguridad Social, que arranca por [los principios del Derecho del Trabajo](/blog/principios-del-derecho-del-trabajo).
 
 ---
 

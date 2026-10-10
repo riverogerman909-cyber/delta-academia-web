@@ -45,7 +45,7 @@ Debe: 30.000. Haber: 10.000 + 20.000 = 30.000. ✓ El asiento cierra — y fijat
 
 ## El superpoder: un sistema que se controla solo
 
-Como cada registro nace equilibrado, el total de débitos y créditos de toda la contabilidad debe coincidir en todo momento. Si al hacer un balance de comprobación las sumas no dan, **hay un error, seguro** — y eso, en 1494 igual que hoy, es oro: el sistema te avisa.
+Como cada registro nace equilibrado, el total de débitos y créditos de toda la contabilidad debe coincidir en todo momento. Si al hacer un [balance de comprobación](/blog/libro-diario-libro-mayor-balance-de-comprobacion) las sumas no dan, **hay un error, seguro** — y eso, en 1494 igual que hoy, es oro: el sistema te avisa.
 
 La letra chica honesta: la partida doble detecta **desequilibrios**, no cualquier error. Si una operación se omite por completo, o se registra equilibrada pero en cuentas equivocadas, las sumas siguen dando. Por eso existen controles adicionales — como el [arqueo de valores](/blog/arqueo-de-valores-paso-a-paso) o la [conciliación bancaria](/blog/conciliacion-bancaria-paso-a-paso).
 
