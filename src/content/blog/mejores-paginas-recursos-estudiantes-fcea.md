@@ -14,7 +14,7 @@ Buena parte del tiempo que se pierde en la facultad no es estudiando: es **busca
 El punto de partida: noticias, calendario de inscripciones, fichas de las materias (el "contrato" de cada curso: programa, evaluación, bibliografía) y las grillas de todas las carreras. Consultá la ficha de cada materia **antes** de cursarla: ahí dice exactamente cómo se aprueba.
 
 **2. Bedelías (SGAE)** — [bedelias.udelar.edu.uy](https://bedelias.udelar.edu.uy)
-El sistema de gestión estudiantil de la UdelaR: inscripciones a cursos y exámenes, escolaridad, resultados. Guardalo en favoritos: en épocas de inscripción lo vas a abrir más que Instagram.
+El sistema de gestión estudiantil de la UdelaR: inscripciones a cursos y exámenes, escolaridad, resultados. Guardalo en favoritos: en épocas de inscripción lo vas a abrir más que Instagram. El paso a paso para anotarte está en [cómo inscribirse a exámenes y revisiones](/blog/como-inscribirse-examenes-revisiones-fcea).
 
 **3. El EVA de la facultad**
 El aula virtual donde vive el material oficial de cada curso: teóricos, prácticos, foros de consulta y avisos de la cátedra. Se accede desde el sitio de la facultad con tu usuario. Revisalo semana a semana — los avisos importantes aparecen ahí primero.

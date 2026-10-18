@@ -12,7 +12,7 @@ Si estás en tus primeros semestres, el sistema de aprobación de FCEA puede son
 
 **1. Exonerar (la vía del curso).** Cursás de forma reglamentada y rendís las **revisiones** (parciales) durante el semestre. Cada revisión otorga puntos; si alcanzás el **puntaje total mínimo** — típicamente 50 sobre 100 — y los **mínimos por prueba** que fije la materia, aprobás sin examen. Eso es exonerar.
 
-**2. Examen.** Si no llegás a los mínimos (o elegís no cursar reglamentado), rendís un **examen** por el total de la materia, generalmente en los períodos de febrero, julio o diciembre. Se aprueba, como regla general, con el 50% del puntaje.
+**2. Examen.** Si no llegás a los mínimos (o elegís no cursar reglamentado), rendís un **examen** por el total de la materia, generalmente en los períodos de diciembre, febrero, julio o agosto. Se aprueba, como regla general, con el 50% del puntaje. Las fechas de los próximos períodos están en nuestras notas sobre los [exámenes de diciembre 2026](/blog/examenes-diciembre-2026-fcea) y los [exámenes de febrero 2027](/blog/examenes-febrero-2027-fcea), y el trámite, en [cómo inscribirse a exámenes y revisiones](/blog/como-inscribirse-examenes-revisiones-fcea).
 
 **Importante**: los puntajes, mínimos y modalidades **varían según la materia** — cada unidad curricular los define en su ficha oficial. En nuestras [páginas de materias](/materias) tenés el detalle de evaluación de cada una, actualizado con las fichas vigentes.
 
@@ -26,7 +26,7 @@ Puede sonar obvio, pero cambia todo: **el que empieza a estudiar para la primera
 
 ## ¿Y si me fue mal en la primera revisión?
 
-No te borres: hacé cuentas. Mirá cuántos puntos otorga lo que queda y qué mínimo necesitás. En muchas materias la segunda instancia otorga la mayor parte del puntaje, así que el partido sigue abierto. Y si los números ya no dan, el semestre no fue en vano: todo lo que estudiaste es la base para preparar el examen con mucho menos esfuerzo.
+No te borres: hacé cuentas. Mirá cuántos puntos otorga lo que queda y qué mínimo necesitás. En muchas materias la segunda instancia otorga la mayor parte del puntaje, así que el partido sigue abierto (acá tenés las [fechas de la segunda revisión del 2º semestre 2026](/blog/segunda-revision-fcea-segundo-semestre-2026)). Y si los números ya no dan, el semestre no fue en vano: todo lo que estudiaste es la base para preparar el examen con mucho menos esfuerzo.
 
 ## En resumen
 

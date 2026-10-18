@@ -8,7 +8,7 @@ tag: "FCEA"
 
 Entrar a FCEA es entrar a un idioma nuevo: créditos, previas, revisiones, y una grilla llena de nombres que todavía no te dicen nada. Esta guía recorre las materias del **primer año de Contador Público (plan 2024)** — varias de las cuales también son comunes a las licenciaturas en Economía y Administración — para que sepas qué esperar de cada una.
 
-> La grilla oficial y las de las demás carreras están en los links de nuestra página de [Info para estudiantes](/info-estudiantes). Verificá siempre tu plan en la facultad.
+> La grilla oficial y las de las demás carreras están en los links de nuestra página de [Info para estudiantes](/info-estudiantes). Verificá siempre tu plan en la facultad. Si todavía no entraste, en [ingreso FCEA 2027](/blog/ingreso-fcea-2027-prueba-diagnostica) repasamos la inscripción, el curso introductorio y la prueba diagnóstica obligatoria.
 
 ## Primer semestre
 
