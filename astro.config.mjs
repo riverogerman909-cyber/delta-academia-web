@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { unified } from '@astrojs/markdown-remark';
 
 // Envuelve cada tabla del markdown en un contenedor con scroll horizontal,
 // para que las tablas anchas no desborden la página en el celular.
@@ -21,5 +22,12 @@ function envolverTablas() {
 export default defineConfig({
   site: 'https://deltaacademiagr.com',
   integrations: [sitemap()],
-  markdown: { rehypePlugins: [envolverTablas] },
+  // Astro 7 cambió el default a 'jsx', que borra los espacios entre texto y etiquetas
+  // ("estudiantes de<strong>FCEA"); se mantiene la compresión de siempre.
+  compressHTML: true,
+  markdown: { processor: unified({ rehypePlugins: [envolverTablas] }) },
+  // Vite 8 minifica el CSS con Lightning CSS, que reescribe `@media (max-width: 640px)` como
+  // `@media (width <= 640px)`: Safari anterior a 16.4 (iPhone con iOS 15) no lo entiende y
+  // pierde el diseño para celular. 128 = Features.MediaRangeSyntax: se mantiene la forma clásica.
+  vite: { css: { lightningcss: { include: 128 } } },
 });

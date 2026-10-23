@@ -4,7 +4,7 @@ Sitio de Delta Academia, acompañamiento paralelo a la facultad para estudiantes
 Construido con [Astro](https://astro.build).
 
 ## Requisitos
-- Node.js 18+ (instalado vía nvm en esta máquina). En una terminal nueva: `. "$HOME/.nvm/nvm.sh"`
+- Node.js 22.23.4+ (lo exige Astro 7). `.nvmrc` fija Node 24 (LTS) para esta máquina y para el build de Cloudflare. Instalado vía nvm en esta máquina; en una terminal nueva: `. "$HOME/.nvm/nvm.sh"`
 
 ## Comandos
 
