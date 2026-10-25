@@ -42,7 +42,7 @@ export const recursos = [
     tipo: 'Simulacro',
     titulo: 'Simulacro · Hoja de Trabajo',
     descripcion:
-      '17 preguntas de exámenes y revisiones reales de la FCEA sobre la hoja de trabajo (unidad 7): incógnitas, resultado del ejercicio por diferencia de columnas y clasificación de cuentas, con respuesta y explicación. Ideal para preparar la segunda revisión.',
+      '17 preguntas de exámenes y revisiones reales de la FCEA sobre la hoja de trabajo (unidad 8): incógnitas, resultado del ejercicio por diferencia de columnas y clasificación de cuentas, con respuesta y explicación. Ideal para preparar la segunda revisión.',
     fecha: '2026-10-25',
     interactivo: '/recursos/simulacro-conceptos-contables-hoja-de-trabajo/',
     pdf: '/recursos/simulacro-conceptos-contables-hoja-de-trabajo.pdf',
