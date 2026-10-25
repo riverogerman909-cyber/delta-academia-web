@@ -37,6 +37,17 @@ export const recursos = [
     pdf: '/recursos/simulacro-contabilidad-general-1-t1-2b.pdf',
   },
   {
+    slug: 'simulacro-conceptos-contables-estados-financieros',
+    materia: 'conceptos-contables',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Estados Financieros',
+    descripcion:
+      '14 preguntas de exámenes y revisiones reales de la FCEA sobre los estados financieros (unidad 7): objetivos, componentes, qué muestra cada estado, notas y usuarios, con respuesta y explicación. Ideal para preparar la segunda revisión.',
+    fecha: '2026-10-25',
+    interactivo: '/recursos/simulacro-conceptos-contables-estados-financieros/',
+    pdf: '/recursos/simulacro-conceptos-contables-estados-financieros.pdf',
+  },
+  {
     slug: 'simulacro-conceptos-contables-hoja-de-trabajo',
     materia: 'conceptos-contables',
     tipo: 'Simulacro',
