@@ -9,7 +9,7 @@ export const recursos = [
     tipo: 'Simulacro',
     titulo: 'Simulacro · Inventarios',
     descripcion:
-      '26 preguntas de exámenes y revisiones reales de la FCEA sobre la unidad 3, con los ejercicios resueltos paso a paso: ficha de stock y FIFO, costo de adquisición e importaciones, permanencia de inventario frente a cuenta desdoblada, faltantes y roturas, y valuación al cierre. Es el tema que abre la segunda parte del curso.',
+      '35 preguntas de exámenes y revisiones reales de la FCEA sobre la unidad 3, con los ejercicios resueltos paso a paso: ficha de stock y FIFO, costo de adquisición e importaciones, permanencia de inventario frente a cuenta desdoblada, faltantes y roturas, y valuación al cierre. Es el tema que abre la segunda parte del curso.',
     fecha: '2026-10-25',
     interactivo: '/recursos/simulacro-contabilidad-general-1-u3/',
     pdf: '/recursos/simulacro-contabilidad-general-1-u3.pdf',
