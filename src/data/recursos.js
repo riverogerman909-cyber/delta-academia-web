@@ -37,6 +37,28 @@ export const recursos = [
     pdf: '/recursos/simulacro-contabilidad-general-1-t1-2b.pdf',
   },
   {
+    slug: 'simulacro-conceptos-contables-hoja-de-trabajo',
+    materia: 'conceptos-contables',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Hoja de Trabajo',
+    descripcion:
+      '17 preguntas de exámenes y revisiones reales de la FCEA sobre la hoja de trabajo (unidad 7): incógnitas, resultado del ejercicio por diferencia de columnas y clasificación de cuentas, con respuesta y explicación. Ideal para preparar la segunda revisión.',
+    fecha: '2026-10-25',
+    interactivo: '/recursos/simulacro-conceptos-contables-hoja-de-trabajo/',
+    pdf: '/recursos/simulacro-conceptos-contables-hoja-de-trabajo.pdf',
+  },
+  {
+    slug: 'simulacro-conceptos-contables-extornos',
+    materia: 'conceptos-contables',
+    tipo: 'Simulacro',
+    titulo: 'Simulacro · Extornos',
+    descripcion:
+      '18 preguntas de exámenes y revisiones reales de la FCEA sobre extornos: qué cuentas se extornan, el asiento de extorno y el extorno parcial, con respuesta y explicación. Ideal para preparar la segunda revisión.',
+    fecha: '2026-10-25',
+    interactivo: '/recursos/simulacro-conceptos-contables-extornos/',
+    pdf: '/recursos/simulacro-conceptos-contables-extornos.pdf',
+  },
+  {
     slug: 'simulacro-conceptos-contables-u6',
     materia: 'conceptos-contables',
     tipo: 'Simulacro',
